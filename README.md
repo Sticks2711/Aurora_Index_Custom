@@ -1,16 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<index>
-	<info>
-		<name>Complete Investigator</name>
-		<description>Investigator class, Detective occult specialization, base features, and new spells from Complete Investigator.</description>
-		<author url="https://www.magehandpress.com/">Mage Hand Press</author>
-		<update version="0.1.0">
-			<file name="complete-investigator.index" url="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/complete-investigator/complete-investigator.index" />
-		</update>
-	</info>
-	<files>
-		<file name="source.xml" url="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/complete-investigator/source.xml" />
-		<file name="class-investigator.xml" url="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/complete-investigator/classes/class-investigator.xml" />
-		<file name="spells.xml" url="https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/complete-investigator/spells.xml" />
-	</files>
-</index>
+# Complete Investigator - Aurora Builder Content
+
+This is the root-layout package for `Sticks2711/Aurora_Index_Custom`.
+
+Use this URL in Aurora Builder's Additional Content tab:
+
+`https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/complete-investigator.index`
+
+Included:
+
+- `complete-investigator.index`
+- `source.xml`
+- `class-investigator.xml`
+- `spells.xml`
+
+Scope:
+
+- Base Investigator class features through level 20
+- Detective occult specialization only
+- New spells and spell-list support from Complete Investigator
+
+Upload these files to the root of the public GitHub repository. Do not use the normal GitHub repository or blob URL in Aurora; use the raw URL above.

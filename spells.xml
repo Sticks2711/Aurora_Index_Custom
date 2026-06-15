@@ -1,18 +1,600 @@
 <?xml version="1.0" encoding="utf-8"?>
 <elements>
 	<info>
-		<name>Complete Investigator Source</name>
-		<description>Source metadata for Complete Investigator.</description>
+		<name>Complete Investigator - Spells</name>
+		<description>New spells from Complete Investigator, including investigator rituals and truename spells.</description>
 		<author url="https://www.magehandpress.com/">Mage Hand Press</author>
-		<update version="0.1.0" />
+		<update version="0.1.1">
+			<file name="spells.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/spells.xml" />
+		</update>
 	</info>
-	<element name="Complete Investigator" type="Source" source="Core" id="ID_MHP_CI_SOURCE_COMPLETE_INVESTIGATOR">
+	<element name="After Image" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_AFTER_IMAGE">
+		<supports>Sorcerer, Warlock, Wizard, Investigator Ritual</supports>
 		<description>
-			<p>Complete Investigator by Mage Hand Press.</p>
+			<p>You create an illusory duplicate of yourself which follows your every movement.</p>
+			<p>When you are hit by an attack during the spell duration, roll any die. On an odd roll, the attack targets and hits the duplicate instead of you. The duplicate vanishes, reappearing after you move 10 feet or more or take the Dodge action. On an even roll, the attack targets you as normal.</p>
 		</description>
 		<setters>
-			<set name="abbreviation">CI</set>
-			<set name="url">https://www.magehandpress.com/</set>
+			<set name="keywords"></set>
+			<set name="level">3</set>
+			<set name="school">Illusion</set>
+			<set name="time">1 action</set>
+			<set name="duration">10 minutes</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a silver hand mirror worth 50 gp</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
 		</setters>
 	</element>
+
+	<element name="Benign Dismemberment" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_BENIGN_DISMEMBERMENT">
+		<supports>Warlock, Witch, Wizard, Investigator Ritual</supports>
+		<description>
+			<p>For the duration, a willing target body parts can be harmlessly severed from its body. It takes no damage from such dismemberment, as long as the cut removing the body part is swift and leaves a clean cut.</p>
+			<p>The target head remains alive and conscious, and parts connected to it also remain alive. All severed body parts become inanimate, but do not begin decomposition for the spell duration. A severed body part removed during the spell can be held back to the stump, instantly causing the part to knit to the stump and restoring the body part.</p>
+			<p>At the end of the duration, severed body parts become permanent, and the target dies if vital organs have not been reattached to its head.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">3</set>
+			<set name="school">Necromancy</set>
+			<set name="time">1 minute</set>
+			<set name="duration">1 hour</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Blood Print" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_BLOOD_PRINT">
+		<supports>Channeler, Paladin, Ranger, Sorcerer, Warlock, Witch, Wizard, Investigator Ritual</supports>
+		<description>
+			<p>At your touch, wet blood on a surface shifts and reforms into a pattern of crimson blotches. This blood print is unique to the creature to whom the blood belongs, but you can determine the creature kind by examining the general shape.</p>
+			<p>A print can be preserved by pressing a sheet of paper against it. If this spell is cast twice, it is possible to match samples of blood originating from the same creature by comparing the prints.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">1</set>
+			<set name="school">Necromancy</set>
+			<set name="time">1 action</set>
+			<set name="duration">Instantaneous</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an ounce or more of blood</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Clue" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_CLUE">
+		<supports>Channeler, Paladin, Ranger, Sorcerer, Warlock, Witch, Wizard, Investigator Ritual</supports>
+		<description>
+			<p>When you cast this spell, all footprints and fingerprints within a 45-foot radius of a point you touch become highlighted and glow faintly for the duration.</p>
+			<p>At the time of casting, choose any period of time up to the last 10 days to the present. Only footprints and fingerprints left within that time are highlighted. Each creature whose prints are detected is assigned a unique color, but is not otherwise identified.</p>
+			<p>Any creature that moves or touches objects in the area will also leave colorful footprints and fingerprints, which might reveal invisible creatures in the area.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">1</set>
+			<set name="school">Divination</set>
+			<set name="time">1 action</set>
+			<set name="duration">10 minutes</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a magnifying glass and pipe</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Consecrated Armor" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_CONSECRATED_ARMOR">
+		<supports>Cleric, Paladin, Investigator Ritual</supports>
+		<description>
+			<p>You trace a holy symbol on your chest, and an invisible barrier protects you until the spell ends.</p>
+			<p>Your base AC becomes 12 + your Dexterity modifier. If you are attacked by a fiend or undead, your AC becomes 15 + your spellcasting ability modifier against that attack.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">1</set>
+			<set name="school">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="duration">8 hours</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a drop of blessed oil</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Discern Truename: Creature" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_DISCERN_TRUENAME_CREATURE">
+		<supports>Wizard, Investigator Ritual, Spell Saving Throw</supports>
+		<description>
+			<p><em>Divination (truenaming)</em></p>
+			<p>You peer into the deepest essence of a creature you can see within range to discern its truename. The target can make a Wisdom saving throw to conceal its truename. If it fails, you learn the creature truename, which you remember for 24 hours.</p>
+			<p>You can hold 3 truenames in your mind at one time; learning an additional truename causes you to forget the oldest truename you have learned. Learning a truename has no magical effect on its own, but allows you to utter the creature truename with deliberate permutations while you hold it in your mind.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">3</set>
+			<set name="school">Divination</set>
+			<set name="time">1 action</set>
+			<set name="duration">Instantaneous</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Discern Truename: Object" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_DISCERN_TRUENAME_OBJECT">
+		<supports>Wizard, Investigator Ritual, Spell Saving Throw</supports>
+		<description>
+			<p><em>Divination (truenaming)</em></p>
+			<p>You capture the essence of an object within range, allowing you to discern its truename. The object must fit entirely within a 5-foot cube and cannot be held or carried by an unwilling creature. A sentient magic item can make a Wisdom saving throw to conceal its truename.</p>
+			<p>If it fails, you learn its truename, which you remember for 24 hours. You can hold 3 truenames in your mind at one time; learning an additional truename causes you to forget the oldest truename you have learned. You cannot learn the truename of an artifact.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">1</set>
+			<set name="school">Divination</set>
+			<set name="time">1 action</set>
+			<set name="duration">Instantaneous</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Discern Truename: Location" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_DISCERN_TRUENAME_LOCATION">
+		<supports>Wizard, Investigator Ritual, Spell Saving Throw</supports>
+		<description>
+			<p><em>Divination (truenaming)</em></p>
+			<p>You capture the truename of a location. Choose the location boundaries, provided the area fits within a 150-foot cube centered on a point you can see within range. If the location is the lair of a monster with lair actions, the monster can make a Wisdom saving throw to conceal the location truename.</p>
+			<p>If it fails, you learn the location truename, which you remember for 24 hours. You can hold 3 truenames in your mind at one time; learning an additional truename causes you to forget the oldest truename you have learned. You cannot capture the truename of a demiplane or the domain of a divine creature.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">5</set>
+			<set name="school">Divination</set>
+			<set name="time">1 action</set>
+			<set name="duration">Instantaneous</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a map of the location</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Distort Gravity" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_DISTORT_GRAVITY">
+		<supports>Bard, Druid, Witch, Wizard, Investigator Ritual</supports>
+		<description>
+			<p>This spell changes the direction of gravity within a 60-foot square area on a surface you touch. The affected area can wrap around a surface if its geometry permits.</p>
+			<p>For the duration, creatures and objects within 15 feet of the surface fall toward it as if it were the ground. A creature can walk on this surface as if it were level ground, even if the surface is perpendicular to the ground or upside down. When the duration ends, all creatures and objects fall from the surface.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">4</set>
+			<set name="school">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a gyroscope</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Game of Fate" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_GAME_OF_FATE">
+		<supports>Bard, Sorcerer, Witch, Wizard, Investigator Ritual, Spell Saving Throw</supports>
+		<description>
+			<p>You magically compel a creature within range to play a nonmagical game with vital consequences. If the creature has Intelligence 3 or lower or speaks no language, it is unaffected. An unwilling creature can make a Wisdom saving throw; on a failure, it is compelled to join the game. If the target takes damage or falls unconscious, the spell ends.</p>
+			<p>The loser of the game takes 6d6 psychic damage. If no player loses or wins by the end of the spell duration, both you and the target take this damage.</p>
+			<p>You and the target can negotiate greater stakes, such as higher psychic damage up to 10d6, property, or esoteric rewards. Property or currency bet on the game is teleported to the winner at the game conclusion, and promised actions are magically compelled. No spell, magical effect, or creature other than you and the target can influence the game outcome.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">6</set>
+			<set name="school">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="duration">1 hour</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a gaming set</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Memorize" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_MEMORIZE">
+		<supports>Bard, Wizard, Investigator Ritual</supports>
+		<description>
+			<p>While casting this spell, your eyes pass over the words on the page, which are committed to your memory. For the next year, you exactly remember the details of all information on this page. After that time, you have advantage on Intelligence checks you make to recall this information.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">1</set>
+			<set name="school">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="duration">Instantaneous</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a page of written text and a length of silver string worth 10 gp, tied in a knot, which the spell consumes</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Nondescript" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_NONDESCRIPT">
+		<supports>Bard, Ranger, Sorcerer, Warlock, Witch, Wizard, Investigator Ritual</supports>
+		<description>
+			<p>This spell makes you seem ordinary and nondescript to others, though it does not change your actual appearance.</p>
+			<p>Creatures who see you while you are under the spell are unable to recall specific details of your appearance when asked if they had seen you or someone matching your description, though their memory of your actions and experienced events is unaffected.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">2</set>
+			<set name="school">Illusion</set>
+			<set name="time">1 action</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Protect Threshold" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_PROTECT_THRESHOLD">
+		<supports>Channeler, Sorcerer, Warlock, Witch, Wizard, Investigator Ritual, Spell Saving Throw</supports>
+		<description>
+			<p>Tracing arcane sigils along its boundary, you ward a doorway, window, or other portal from entry. For the duration, an invisible eldritch creature stalks the warded portal.</p>
+			<p>Any creature that attempts to pass through the portal must make a Wisdom saving throw, taking 4d6 psychic damage on a failed save, or half as much on a successful one.</p>
+			<p>At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">2</set>
+			<set name="school">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="duration">10 minutes</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an ounce of salt for each foot of the warded portal perimeter</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Rumor" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_RUMOR">
+		<supports>Bard, Sorcerer, Witch, Wizard, Investigator Ritual</supports>
+		<description>
+			<p>You magically spread a rumor of 10 words or fewer. Any intelligent creature within range that is near three or more other creatures which speak the same language believes it hears the rumor repeated by someone nearby.</p>
+			<p>Different creatures hear the rumor from different people, so a concrete origin point is impossible to discern. Hearing a rumor can affect a creature disposition positively or negatively.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">1</set>
+			<set name="school">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="duration">1 minute</set>
+			<set name="range">Self (100-foot radius)</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Seance" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_SEANCE">
+		<supports>Warlock, Witch, Wizard, Investigator Ritual</supports>
+		<description>
+			<p>You and at least three willing creatures lock hands in meditation to conjure a spirit from the afterlife to answer your questions. Describe or name a creature familiar to you. If the creature soul is free and willing, it manifests as a ghostly specter. The spell fails if the spirit was the target of this spell within the last 10 days.</p>
+			<p>Until the spell ends, you can ask up to three questions. The specter knows only what it knew in life, including languages it knew. Answers are usually brief, cryptic, or repetitive, and the specter is under no compulsion to offer truthful answers if you are hostile to it or it recognizes you as an enemy. There is a 5 percent chance that this spell contacts the wrong spirit, which answers untruthfully or ambiguously.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">3</set>
+			<set name="school">Divination</set>
+			<set name="time">10 minutes</set>
+			<set name="duration">1 minute</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a crystal ball, deck of tarot cards, or ouija board</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Soul Bond" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_SOUL_BOND">
+		<supports>Warlock, Witch, Wizard, Investigator Ritual, Spell Saving Throw</supports>
+		<description>
+			<p>This spell forges a mortal connection between yourself and a humanoid creature you touch. The target must be present for the entire casting. If it is unwilling, it must make a Constitution saving throw to resist the spell.</p>
+			<p>For the duration, if you are reduced to 0 hit points, the target is also reduced to 0 hit points, and vice versa. This spell ends if you cast it again, or if you dismiss it as an action.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">4</set>
+			<set name="school">Necromancy</set>
+			<set name="time">1 minute</set>
+			<set name="duration">24 hours</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">two nails from a coffin</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="Transient Bulwark" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_TRANSIENT_BULWARK">
+		<supports>Channeler, Paladin, Wizard, Investigator Ritual</supports>
+		<description>
+			<p>The next attack made against you within the duration has a -10 penalty to hit.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">1</set>
+			<set name="school">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="duration">8 hours</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a pearl worth 10 gp, which the spell consumes</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<element name="True Rename" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_TRUE_RENAME">
+		<supports>Wizard</supports>
+		<description>
+			<p><em>Divination (truenaming)</em></p>
+			<p>You utter a truename over and over, changing it slightly until the truename itself is different. You must have learned a truename to cast this spell. Once cast, every creature forgets the target truename, and no creature can discern it for 1 year.</p>
+			<p>Creature: you change one of the target bonds, flaws, or personality traits.</p>
+			<p>Object: you enchant a nonmagical target item into a magic item of uncommon rarity that matches the item type and shape, or reduce a magic item to a nonmagical one. You can later restore that item to its original magical power with this spell.</p>
+			<p>Location: you distort the laws of physics in the location. You can change gravity by 50 percent, set the temperature from 0 to 150 degrees Fahrenheit, create persistent fog or wind, or create another persistent magical effect with GM approval.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">9</set>
+			<set name="school">Divination</set>
+			<set name="time">10 minutes</set>
+			<set name="duration">Instantaneous</set>
+			<set name="range">Unlimited</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">incense and ruby dust worth 5,000 gp, which the spell consumes</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Utter Appearance" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_UTTER_APPEARANCE">
+		<supports>Wizard, Investigator Ritual</supports>
+		<description>
+			<p><em>Illusion (truenaming)</em></p>
+			<p>You speak a truename, but omit every part referring to the subject appearance. You must have learned a truename to cast this spell.</p>
+			<p>Creature: the target creature becomes invisible as per invisibility.</p>
+			<p>Object: you can modify the target object magical aura as per magic aura. You can also choose for the object to become invisible for the duration.</p>
+			<p>Location: you magically change the target area appearance as per hallucinatory terrain for the duration.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">2</set>
+			<set name="school">Illusion</set>
+			<set name="time">1 action</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Utter Destination" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_UTTER_DESTINATION">
+		<supports>Wizard, Spell Saving Throw</supports>
+		<description>
+			<p><em>Conjuration (truenaming)</em></p>
+			<p>You utter a truename, but change important syllables which refer to location. You must have learned a truename to cast this spell.</p>
+			<p>Creature: the target creature is teleported to a location you choose within range.</p>
+			<p>Object: the target object is teleported to a location you choose within range, or into your open hand.</p>
+			<p>Location: each creature within the area is teleported to an unoccupied space you choose on the ground or floor within the area. An unwilling creature can make a Charisma saving throw to avoid this effect.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">7</set>
+			<set name="school">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="duration">Instantaneous</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Utter Ego" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_UTTER_EGO">
+		<supports>Wizard, Investigator Ritual, Spell Saving Throw</supports>
+		<description>
+			<p><em>Enchantment (truenaming)</em></p>
+			<p>You speak a truename, but skip the syllables which refer to the innermost self. You must have learned a truename to cast this spell.</p>
+			<p>Creature: the target creature is charmed by you until the spell ends or it takes damage. It is friendly to you, and when the spell ends it does not know it was charmed by you.</p>
+			<p>Object: you influence the emotion the object inspires in others for the duration. The emotion does not compel creatures to act, but might influence behavior.</p>
+			<p>Location: choose Attract or Repel for creatures you choose in the area. Attracted creatures must make a Wisdom saving throw when trying to leave; on a failure, their speed becomes 0 until the end of that turn. Repelled creatures that fail a Wisdom save must Dash and move by the safest route to leave, repeating the save at the end of each turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">1</set>
+			<set name="school">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="duration">1 hour</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Utter Energy" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_UTTER_ENERGY">
+		<supports>Wizard, Investigator Ritual, Spell Saving Throw</supports>
+		<description>
+			<p><em>Evocation (truenaming)</em></p>
+			<p>You utter a truename, but change its root to that of a combination of elements. Choose acid, cold, fire, lightning, poison, or thunder when you cast the spell.</p>
+			<p>Creature: an aura radiates from the target. A creature within 5 feet of it for the first time on a turn or starting there must make a Dexterity saving throw, taking 3d6 damage on a failed save, or half as much on a success.</p>
+			<p>Object: the target object radiates energy. A creature in physical contact with it takes 3d8 damage when you cast the spell, and again the first time it touches the object on a turn or starts its turn touching it.</p>
+			<p>Location: each creature in the area takes 1d10 damage when it enters the area for the first time on a turn or starts its turn there.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">3</set>
+			<set name="school">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="duration">1 minute</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Utter Form" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_UTTER_FORM">
+		<supports>Wizard</supports>
+		<description>
+			<p><em>Transmutation (truenaming)</em></p>
+			<p>You speak a truename, mutating nearly every part of it until the name is nearly unrecognizable. You must have learned a truename to cast this spell.</p>
+			<p>Creature: the target transforms into a new form as per polymorph. The new form can be any creature with challenge rating equal to or less than the target challenge rating, or the target level if it has no challenge rating.</p>
+			<p>Object: the target object transforms into a similar form. A weapon becomes another weapon, armor becomes another armor, and other objects require GM approval. If you concentrate for the entire duration, the transformation becomes permanent.</p>
+			<p>Location: you reshape earth within the location as per move earth, including natural stone, dirt, and clay. Changes occur over 1 minute and revert over 1 minute when the spell ends, though damaged structures remain damaged.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">8</set>
+			<set name="school">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Utter Insight" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_UTTER_INSIGHT">
+		<supports>Wizard, Investigator Ritual</supports>
+		<description>
+			<p><em>Divination (truenaming)</em></p>
+			<p>You carefully pronounce a truename, analyzing every sound and syllable of its construction. You must have learned a truename to cast this spell.</p>
+			<p>Creature: you learn one of the target bonds, flaws, or personality traits. Object: you learn the object properties as per identify. Location: you learn a brief summary of significant lore related to the location as per legend lore.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">1</set>
+			<set name="school">Divination</set>
+			<set name="time">1 action</set>
+			<set name="duration">Instantaneous</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Utter Inversion" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_UTTER_INVERSION">
+		<supports>Wizard, Spell Saving Throw</supports>
+		<description>
+			<p><em>Necromancy (truenaming)</em></p>
+			<p>You speak a truename in reverse, causing its subject to fundamentally unravel. You must have learned a truename to cast this spell.</p>
+			<p>Creature: the target takes 10d8 necrotic damage. After taking this damage, it can make a Wisdom saving throw. On a success, you forget its truename.</p>
+			<p>Object: a nonmagical target is disintegrated. A magical item is not destroyed, but its properties and powers are suppressed for 1 minute.</p>
+			<p>Location: each creature you choose within the area must make a Constitution saving throw, taking 8d6 necrotic damage on a failed save, or half as much on a success.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">6</set>
+			<set name="school">Necromancy</set>
+			<set name="time">1 action</set>
+			<set name="duration">Instantaneous</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Utter Substance" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_UTTER_SUBSTANCE">
+		<supports>Wizard, Investigator Ritual</supports>
+		<description>
+			<p><em>Abjuration (truenaming)</em></p>
+			<p>You speak a truename, reordering its construction into something resembling an abstract concept. You must have learned a truename to cast this spell.</p>
+			<p>Creature: the target and anything it wears or carries becomes distant and ethereal. For the duration, it has resistance to nonmagical bludgeoning, piercing, and slashing damage.</p>
+			<p>Object: the target object becomes immaterial. For the duration, it passes harmlessly through creatures and objects you choose.</p>
+			<p>Location: unattended objects in the location become partially immaterial. Creatures can pass through objects as difficult terrain and can move through a ceiling or floor using 10 feet of movement if there is space below. A creature ending its turn inside an object takes 2d10 force damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">truenaming</set>
+			<set name="level">4</set>
+			<set name="school">Abjuration</set>
+			<set name="time">1 action</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">true</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
 </elements>
