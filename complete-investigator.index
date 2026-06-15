@@ -1,6 +1,16 @@
-Open Game License v 1.0a Copyright 2000, Wizards of the Coast, Inc.
-System Reference Document 5.0 Copyright 2016, Wizards of the Coast, Inc.
-Complete Investigator Copyright 2019, Mage Hand Press LLC; authors Michael Holik, Justin Forkner, Matthew Penell.
-
-This package contains Open Game Content adapted for Aurora Builder from Complete Investigator.
-Keep this notice with redistributed copies of these files.
+<?xml version="1.0" encoding="utf-8"?>
+<index>
+	<info>
+		<name>Complete Investigator</name>
+		<description>Investigator class, Detective occult specialization, base features, and new spells from Complete Investigator.</description>
+		<author url="https://www.magehandpress.com/">Mage Hand Press</author>
+		<update version="0.1.0">
+			<file name="complete-investigator.index" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/refs/heads/main/class-investigator.xml" />
+		</update>
+	</info>
+	<files>
+		<file name="source.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/refs/heads/main/source.xml" />
+		<file name="class-investigator.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/refs/heads/main/class-investigator.xml" />
+		<file name="spells.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/refs/heads/main/spells.xml" />
+	</files>
+</index>
