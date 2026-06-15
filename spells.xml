@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<elements>
+	<info>
+		<name>Complete Investigator Source</name>
+		<description>Source metadata for Complete Investigator.</description>
+		<author url="https://www.magehandpress.com/">Mage Hand Press</author>
+		<update version="0.1.0" />
+	</info>
+	<element name="Complete Investigator" type="Source" source="Core" id="ID_MHP_CI_SOURCE_COMPLETE_INVESTIGATOR">
+		<description>
+			<p>Complete Investigator by Mage Hand Press.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">CI</set>
+			<set name="url">https://www.magehandpress.com/</set>
+		</setters>
+	</element>
+</elements>

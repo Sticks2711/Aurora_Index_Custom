@@ -1,0 +1,24 @@
+# Complete Investigator - Aurora Builder Content
+
+This folder contains an Aurora Builder content package for the Investigator class from Complete Investigator.
+
+Included:
+- complete-investigator.index
+- source.xml
+- classes/class-investigator.xml
+- spells.xml
+- licenses/OGL-NOTICE.txt
+
+Scope:
+- Base Investigator class features through level 20
+- Detective occult specialization only
+- New spells and spell-list support from Complete Investigator
+
+Hosting:
+Replace USERNAME/REPOSITORY/main in complete-investigator.index with your hosted raw GitHub path, then host this folder structure unchanged.
+
+Local use:
+You can also copy the XML files into Documents/5e Character Builder/custom/user and reload Aurora.
+
+Notes:
+The Ritualist selector includes ritual spells and custom Investigator Ritual spells as a tracking aid. Some official PHB spells are treated as bonus rituals by the class text; if Aurora does not list a bonus PHB spell under the selector, add it manually according to the class feature text.
