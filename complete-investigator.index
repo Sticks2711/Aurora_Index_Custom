@@ -5,7 +5,7 @@
 		<description>Investigator class, Detective occult specialization, base features, and new spells from Complete Investigator.</description>
 		<author url="https://www.magehandpress.com/">Mage Hand Press</author>
 		<update version="0.1.1">
-			<file name="complete-investigator.index" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/complete-investigator.index" />
+			<file name="complete-investigator.index" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/refs/heads/main/class-investigator.xml" />
 		</update>
 	</info>
 	<files>
