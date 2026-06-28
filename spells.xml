@@ -4,7 +4,7 @@
 		<name>Complete Investigator - Spells</name>
 		<description>New spells from Complete Investigator, including investigator rituals and truename spells.</description>
 		<author url="https://www.magehandpress.com/">Mage Hand Press</author>
-		<update version="0.1.1">
+		<update version="0.1.2">
 			<file name="spells.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/spells.xml" />
 		</update>
 	</info>
@@ -226,6 +226,28 @@
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
 			<set name="materialComponent">a gaming set</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+		</setters>
+	</element>
+
+	<element name="Jethro's Instant Reload" type="Spell" source="Complete Investigator" id="ID_MHP_CI_SPELL_JETHROS_INSTANT_RELOAD">
+		<supports>Bard, Ranger, Wizard, Investigator Ritual</supports>
+		<description>
+			<p>One ranged weapon you touch becomes enchanted to reload itself automatically. If the weapon has the Cooldown, Loading, or Reload property, you ignore that property for the duration.</p>
+			<p>When the weapon ammunition is depleted, ammunition you are carrying teleports into the weapon.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">2</set>
+			<set name="school">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="duration">8 hours</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a spent bullet casing</set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>

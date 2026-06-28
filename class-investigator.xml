@@ -2,9 +2,9 @@
 <elements>
 	<info>
 		<name>Complete Investigator - Investigator Class</name>
-		<description>Investigator class, base features, and the Detective occult specialization.</description>
+		<description>Investigator class, base features, and the Detective and Exterminator occult specializations.</description>
 		<author url="https://www.magehandpress.com/">Mage Hand Press</author>
-		<update version="0.1.1">
+		<update version="0.1.2">
 			<file name="class-investigator.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/class-investigator.xml" />
 		</update>
 	</info>
@@ -378,6 +378,74 @@
 		</description>
 		<sheet action="Action" usage="1/Short Rest">
 			<description>Examine a creature within 30 ft. For 1 minute, gain advantage on Int/Cha checks to interact with it and on attack rolls against it.</description>
+		</sheet>
+	</element>
+
+	<element name="Exterminator" type="Archetype" source="Complete Investigator" id="ID_MHP_CI_ARCHETYPE_INVESTIGATOR_EXTERMINATOR">
+		<supports>Investigator Occult Specialization</supports>
+		<description>
+			<p>An exterminator suffers no monster to live. Trained in the art of slaying aberrations, fiends, and undead, you stand against evil where others falter, and draw your blade before others recognize a threat.</p>
+			<h5>Exterminator Features</h5>
+			<p>3rd Level: Bonus Proficiencies, Trinkets. 6th Level: Monster Slayer. 10th Level: Silvered Edge. 14th Level: Killer Instinct.</p>
+		</description>
+		<rules>
+			<grant type="Archetype Feature" id="ID_MHP_CI_ARCHETYPE_FEATURE_INVESTIGATOR_EXTERMINATOR_BONUS_PROFICIENCIES" level="3" />
+			<grant type="Archetype Feature" id="ID_MHP_CI_ARCHETYPE_FEATURE_INVESTIGATOR_EXTERMINATOR_TRINKETS" level="3" />
+			<grant type="Archetype Feature" id="ID_MHP_CI_ARCHETYPE_FEATURE_INVESTIGATOR_EXTERMINATOR_MONSTER_SLAYER" level="6" />
+			<grant type="Archetype Feature" id="ID_MHP_CI_ARCHETYPE_FEATURE_INVESTIGATOR_EXTERMINATOR_SILVERED_EDGE" level="10" />
+			<grant type="Archetype Feature" id="ID_MHP_CI_ARCHETYPE_FEATURE_INVESTIGATOR_EXTERMINATOR_KILLER_INSTINCT" level="14" />
+		</rules>
+	</element>
+
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="Complete Investigator" id="ID_MHP_CI_ARCHETYPE_FEATURE_INVESTIGATOR_EXTERMINATOR_BONUS_PROFICIENCIES">
+		<description>
+			<p>Starting when you choose this specialization at 3rd level, you gain proficiency with martial weapons and medium armor.</p>
+		</description>
+		<sheet>
+			<description>You gain proficiency with martial weapons and medium armor.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+		</rules>
+	</element>
+
+	<element name="Exterminator Trinkets" type="Archetype Feature" source="Complete Investigator" id="ID_MHP_CI_ARCHETYPE_FEATURE_INVESTIGATOR_EXTERMINATOR_TRINKETS">
+		<description>
+			<p>You have collected magical trinkets to aid you in the elimination of monsters and other fiendish threats. Once you use one of your trinkets, you cannot use another one until you finish a short or long rest; uses increase with the investigator Trinkets feature.</p>
+			<p>Consecrated Whetstone: as a bonus action, cast magic weapon without a spell slot or components.</p>
+			<p>Gilded Dragon Scale: as a bonus action, gain resistance to one damage type of your choice for 1 minute.</p>
+			<p>Wyverntooth Necklace: when you hit a creature with a melee weapon attack, use your bonus action to activate this trinket, dealing an additional 2d6 acid damage to the creature.</p>
+		</description>
+		<sheet action="Bonus Action" usage="Trinket uses">
+			<description>Use Consecrated Whetstone, Gilded Dragon Scale, or Wyverntooth Necklace.</description>
+		</sheet>
+	</element>
+
+	<element name="Monster Slayer" type="Archetype Feature" source="Complete Investigator" id="ID_MHP_CI_ARCHETYPE_FEATURE_INVESTIGATOR_EXTERMINATOR_MONSTER_SLAYER">
+		<description>
+			<p>Beginning at 6th level, when you use the Attack action, you can make one weapon attack as a bonus action. You can use this feature a number of times equal to your Intelligence modifier (a minimum of once) and regain all expended uses when you finish a short or long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="Int mod/Short Rest">
+			<description>After you take the Attack action, make one weapon attack as a bonus action.</description>
+		</sheet>
+	</element>
+
+	<element name="Silvered Edge" type="Archetype Feature" source="Complete Investigator" id="ID_MHP_CI_ARCHETYPE_FEATURE_INVESTIGATOR_EXTERMINATOR_SILVERED_EDGE">
+		<description>
+			<p>Starting at 10th level, whenever you deal damage to a creature with a weapon attack, it cannot regain hit points until the start of your next turn. Additionally, when you reduce a creature to 0 hit points, it cannot be raised as an undead creature nor be returned to life for 7 days.</p>
+		</description>
+		<sheet>
+			<description>Creatures you damage with weapon attacks cannot regain hit points until your next turn. Creatures you reduce to 0 HP cannot be raised as undead or revived for 7 days.</description>
+		</sheet>
+	</element>
+
+	<element name="Killer Instinct" type="Archetype Feature" source="Complete Investigator" id="ID_MHP_CI_ARCHETYPE_FEATURE_INVESTIGATOR_EXTERMINATOR_KILLER_INSTINCT">
+		<description>
+			<p>Starting at 14th level, you can use your Exploit Weakness feature twice on your turn, but cannot use it against the same target more than once.</p>
+		</description>
+		<sheet usage="2/Turn">
+			<description>Use Exploit Weakness twice per turn, but not against the same target more than once.</description>
 		</sheet>
 	</element>
 
