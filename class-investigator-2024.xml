@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<elements>
+	<info>
+		<name>Complete Investigator - Investigator Class (2024)</name>
+		<description>2024-updated Investigator class and Exterminator occult specialization from Complete Investigator. Does not modify the original 2019 class or subclasses.</description>
+		<author url="https://www.magehandpress.com/">Mage Hand Press</author>
+		<update version="0.1.0">
+			<file name="class-investigator-2024.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/class-investigator-2024.xml" />
+		</update>
+	</info>
+
+	<element name="Investigator (2024)" type="Class" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_INVESTIGATOR">
+		<description>
+			<p>Supernatural detectives and monster slayers, investigators are always on the hunt for malevolent outsiders. Whenever evil seeps into the world&#x2014;be it Fiends, Undead, or strange Aberrations from beyond the stars&#x2014;investigators are the first to locate them and banish their foul corruption from the mortal plane.</p>
+			<h5>Core Traits</h5>
+			<p>Primary Ability: Dexterity and Intelligence. Hit Point Die: d8 per investigator level. Saving Throw Proficiencies: Dexterity and Intelligence. Skill Proficiencies: choose three from Arcana, Athletics, Deception, History, Insight, Intimidation, Investigation, Medicine, Nature, Perception, Persuasion, Religion, Sleight of Hand, and Stealth. Weapon Proficiencies: simple and martial weapons. Armor Training: light armor.</p>
+			<h5>Starting Equipment</h5>
+			<p>Choose A or B: (A) leather armor, 2 daggers, a rapier, a heavy crossbow, 20 bolts, a crossbow bolt case, a dungeoneer&#x27;s pack, and 17 gp; or (B) 120 gp.</p>
+		</description>
+		<sheet display="false">
+			<description>A supernatural detective and monster slayer (2024 rules).</description>
+		</sheet>
+		<setters>
+			<set name="short">A supernatural detective and monster slayer who relies on expertise, weapon mastery, rituals, and trinkets to defeat occult threats (2024 rules).</set>
+			<set name="hd">d8</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_MHP_CI2024_MULTICLASS_INVESTIGATOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_MHP_CI2024_MULTICLASS_INVESTIGATOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" requirements="!ID_MHP_CI2024_MULTICLASS_INVESTIGATOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" requirements="!ID_MHP_CI2024_MULTICLASS_INVESTIGATOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" requirements="!ID_MHP_CI2024_MULTICLASS_INVESTIGATOR" />
+			<select type="Proficiency" name="Skill Proficiency (Investigator 2024)" supports="Skill,Investigator" number="3" requirements="!ID_MHP_CI2024_MULTICLASS_INVESTIGATOR" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_RITUALIST" level="1" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_WEAPON_MASTERY" level="1" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_EXPERTISE" level="2" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_FINISHER" level="2" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_RUSHED_INCANTATION" level="2" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_SUBCLASS" level="3" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_TRINKETS" level="3" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_ABILITY_SCORE_IMPROVEMENT" level="4" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_EXPLOIT_WEAKNESS" level="5" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_HOLY_TRINKETS" level="7" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_ABILITY_SCORE_IMPROVEMENT" level="8" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_EXPERTISE_IMPROVEMENT" level="9" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_IMPROVED_FINISHER" level="11" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_ABILITY_SCORE_IMPROVEMENT" level="12" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_ENIGMA_ARCANE_7" level="13" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_ABILITY_SCORE_IMPROVEMENT" level="16" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_ENIGMA_ARCANE_8" level="15" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_ENIGMA_ARCANE_9" level="17" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_IMPROVED_FINISHER_17" level="17" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_SUPERNATURAL_RESOLVE" level="18" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_EPIC_BOON" level="19" />
+			<grant type="Class Feature" id="ID_MHP_CI2024_CLASS_FEATURE_SPELLBINDER" level="20" />
+		</rules>
+		<multiclass id="ID_MHP_CI2024_MULTICLASS_INVESTIGATOR">
+			<prerequisite>Intelligence 13</prerequisite>
+			<requirements>[int:13]</requirements>
+			<setters>
+				<set name="multiclass proficiencies">Light armor, martial weapons, and one investigator skill.</set>
+			</setters>
+			<rules>
+				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+				<select type="Proficiency" name="Skill Proficiency (Investigator 2024 Multiclass)" supports="Skill,Investigator" />
+			</rules>
+		</multiclass>
+	</element>
+
+	<element name="Ritualist" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_RITUALIST">
+		<description>
+			<p>You have learned to cast Rituals to overcome supernatural threats. Your grimoire starts with four 1st-level Investigator spells of your choice. Whenever you gain an Investigator level, you can add two Investigator spells of your choice to your grimoire; the maximum spell level you can add is shown by your Ritual Level.</p>
+			<p>Ritual Casting: you can cast any spell as a Ritual if it has the Ritual tag and is in your grimoire. You must read from the book to cast a spell this way. You cannot cast spells in your grimoire except as Rituals unless you have learned them by other means.</p>
+			<p>Spellcasting Ability: Intelligence is your spellcasting ability for your Investigator spells.</p>
+		</description>
+		<sheet>
+			<description>You maintain a grimoire and cast its spells as rituals. Intelligence is your investigator spellcasting ability.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Investigator Spell (Starting Grimoire, 2024)" supports="Investigator Ritual" number="4" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 2)" supports="Investigator Ritual" number="2" level="2" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 3)" supports="Investigator Ritual" number="2" level="3" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 4)" supports="Investigator Ritual" number="2" level="4" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 5)" supports="Investigator Ritual" number="2" level="5" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 6)" supports="Investigator Ritual" number="2" level="6" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 7)" supports="Investigator Ritual" number="2" level="7" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 8)" supports="Investigator Ritual" number="2" level="8" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 9)" supports="Investigator Ritual" number="2" level="9" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 10)" supports="Investigator Ritual" number="2" level="10" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 11)" supports="Investigator Ritual" number="2" level="11" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 12)" supports="Investigator Ritual" number="2" level="12" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 13)" supports="Investigator Ritual" number="2" level="13" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 14)" supports="Investigator Ritual" number="2" level="14" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 15)" supports="Investigator Ritual" number="2" level="15" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 16)" supports="Investigator Ritual" number="2" level="16" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 17)" supports="Investigator Ritual" number="2" level="17" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 18)" supports="Investigator Ritual" number="2" level="18" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 19)" supports="Investigator Ritual" number="2" level="19" spellcasting="Investigator Ritualist (2024)" />
+			<select type="Spell" name="Investigator Spell (2024, Level 20)" supports="Investigator Ritual" number="2" level="20" spellcasting="Investigator Ritualist (2024)" />
+		</rules>
+	</element>
+
+	<element name="Weapon Mastery" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_WEAPON_MASTERY">
+		<description>
+			<p>Your training with weapons allows you to use the mastery properties of two kinds of weapons of your choice with which you have proficiency, such as Rapiers and Heavy Crossbows. Whenever you finish a Long Rest, you can change the kinds of weapons you chose.</p>
+		</description>
+		<sheet>
+			<description>Choose two weapon types to use their Mastery property; change the choice on a Long Rest.</description>
+		</sheet>
+		<rules>
+			<!-- NOTE: map this selector to your ruleset's native Weapon Mastery selection support if different (e.g. ID_INTERNAL_SUPPORT_WEAPON_MASTERY). -->
+			<select type="Class Feature" name="Weapon Mastery (Investigator 2024)" supports="Weapon Mastery" number="2" />
+		</rules>
+	</element>
+
+	<element name="Expertise" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_EXPERTISE">
+		<description>
+			<p>At 2nd level, you gain Expertise in two of your skill proficiencies of your choice. At 9th level, you gain Expertise in two more of your skill proficiencies of your choice.</p>
+		</description>
+		<sheet>
+			<description>Choose two skill proficiencies; double your proficiency bonus for checks with them.</description>
+		</sheet>
+		<rules>
+			<select type="Class Feature" name="Expertise (Investigator 2024)" supports="ID_INTERNAL_SUPPORT_EXPERTISE" number="2" />
+		</rules>
+	</element>
+
+	<element name="Expertise Improvement" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_EXPERTISE_IMPROVEMENT">
+		<description>
+			<p>At 9th level, you gain Expertise in two more of your skill proficiencies of your choice.</p>
+		</description>
+		<sheet>
+			<description>Choose two more proficiencies for Expertise.</description>
+		</sheet>
+		<rules>
+			<select type="Class Feature" name="Expertise (Investigator 2024)" supports="ID_INTERNAL_SUPPORT_EXPERTISE" number="2" />
+		</rules>
+	</element>
+
+	<element name="Finisher" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_FINISHER">
+		<description>
+			<p>Once per turn when you deal damage with a weapon to a creature that is Bloodied, you can deal an extra 1d8 damage to the target, of the same type as the weapon&#x27;s damage. This damage increases to 2d8 at 11th level and 3d8 at 17th level.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>On a weapon hit against a Bloodied target, deal extra weapon-type damage (1d8, scaling to 2d8 at 11th and 3d8 at 17th).</description>
+		</sheet>
+	</element>
+
+	<element name="Rushed Incantation" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_RUSHED_INCANTATION">
+		<description>
+			<p>You can hastily perform any spell in your grimoire that has a casting time of an action or Bonus Action, casting the spell as a Bonus Action. You can cast it without material components unless the components have a cost of 100+ gp specified by the spell.</p>
+			<p>You can use this feature three times, gaining additional uses at higher levels (up to 10 at 20th level). You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="3+/Long Rest (1/Short Rest)">
+			<description>Cast a grimoire spell with a casting time of an action or bonus action as a bonus action; ignore components under 100 gp.</description>
+		</sheet>
+	</element>
+
+	<element name="Investigator Subclass" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_SUBCLASS">
+		<description>
+			<p>At 3rd level, you gain an Investigator subclass of your choice. For the rest of your career, you gain each of your subclass&#x27;s features that are of your Investigator level or lower.</p>
+		</description>
+		<sheet>
+			<description>Choose an Investigator subclass.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype" name="Investigator Subclass (2024)" supports="Investigator Occult Specialization 2024" />
+		</rules>
+	</element>
+
+	<element name="Trinkets" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_TRINKETS">
+		<description>
+			<p>Your subclass grants you a number of supernatural trinkets. You can use this feature twice, activating one of your trinket options each time. You regain one expended use when you finish a Short Rest, and all expended uses when you finish a Long Rest. You gain additional uses at higher levels (up to 6 at 20th level).</p>
+		</description>
+		<sheet usage="2+/Long Rest (1/Short Rest)">
+			<description>Use one of your subclass's trinket options; scales up to 6 uses by 20th level.</description>
+		</sheet>
+	</element>
+
+	<element name="Ability Score Improvement" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_ABILITY_SCORE_IMPROVEMENT">
+		<description>
+			<p>You gain the Ability Score Improvement feat or another feat of your choice for which you qualify. You gain this feature again at Investigator levels 8, 12, and 16.</p>
+		</description>
+		<sheet display="false">
+			<description>Gain the Ability Score Improvement feat or another feat you qualify for.</description>
+		</sheet>
+		<rules>
+			<select type="Class Feature" name="Improvement Option (Investigator 2024, 4)" supports="Improvement Option,Investigator,4" level="4" />
+			<select type="Class Feature" name="Improvement Option (Investigator 2024, 8)" supports="Improvement Option,Investigator,8" level="8" />
+			<select type="Class Feature" name="Improvement Option (Investigator 2024, 12)" supports="Improvement Option,Investigator,12" level="12" />
+			<select type="Class Feature" name="Improvement Option (Investigator 2024, 16)" supports="Improvement Option,Investigator,16" level="16" />
+		</rules>
+	</element>
+
+	<element name="Exploit Weakness" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_EXPLOIT_WEAKNESS">
+		<description>
+			<p>Once per turn when you deal damage to a creature with a weapon attack, you can target the creature where it is most vulnerable.</p>
+			<p>Damage Vulnerability: choose one damage type dealt by the attack. The target has Vulnerability to the chosen damage type for this attack. This doesn&#x27;t double extra damage from spells or other class features, and doesn&#x27;t apply if the target has Immunity to the chosen type.</p>
+			<p>Disrupt Resistance: if the target has Resistance to one or more damage types, it loses these Resistances until the start of your next turn, including against the damage of the triggering attack.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>On a weapon hit, give the target Vulnerability to a chosen damage type for the attack, and strip its Resistances until your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Holy Trinkets" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_HOLY_TRINKETS">
+		<description>
+			<p>You keep a wide array of Holy Symbols and blessed items on your person. You can use the following trinkets, expending a use of your Trinkets to do so.</p>
+			<p>Amulet of Warding: as a Bonus Action, place a divine ward on a creature within 60 feet. Until the start of your next turn, the warded creature gains a bonus to AC and saving throws equal to your Intelligence modifier (minimum +1).</p>
+			<p>Restorative Ankh: as a Bonus Action, a creature within 60 feet regains hit points equal to your Investigator level plus your Intelligence modifier.</p>
+			<p>Rune of Banishment: as a Bonus Action, choose a creature within 60 feet. It must succeed on a Charisma saving throw against your spell save DC or be banished to a harmless location in the Ethereal Plane, with the Incapacitated condition and Speed 0, until the start of your next turn.</p>
+		</description>
+		<sheet action="Bonus Action" usage="Trinket use">
+			<description>Use Amulet of Warding, Restorative Ankh, or Rune of Banishment (expends a Trinkets use).</description>
+		</sheet>
+	</element>
+
+	<element name="Improved Finisher" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_IMPROVED_FINISHER">
+		<description>
+			<p>When you take the Attack action on your turn, you can use your Finisher on a creature that isn&#x27;t Bloodied, dealing only an extra 1d8 damage to the target. At 17th level, this damage increases to 2d8.</p>
+		</description>
+		<sheet>
+			<description>Use Finisher against a non-Bloodied target for 1d8 extra damage (2d8 at 17th level).</description>
+		</sheet>
+	</element>
+
+	<element name="Improved Finisher (17th Level)" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_IMPROVED_FINISHER_17">
+		<description>
+			<p>At 17th level, the extra damage from using Finisher on a creature that isn&#x27;t Bloodied increases to 2d8.</p>
+		</description>
+		<sheet>
+			<description>Improved Finisher damage increases to 2d8.</description>
+		</sheet>
+	</element>
+
+	<element name="Enigma Arcane" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_ENIGMA_ARCANE_7">
+		<description>
+			<p>At 13th level, you learn a secret that unlocks potent arcane magic. You can cast one of the following spells without a spell slot and regain the ability to do so when you finish a Long Rest: mirage arcane, plane shift, reverse gravity, sequester, or teleport.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>Cast mirage arcane, plane shift, reverse gravity, sequester, or teleport without a spell slot.</description>
+		</sheet>
+	</element>
+
+	<element name="Enigma Arcane (15th Level)" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_ENIGMA_ARCANE_8">
+		<description>
+			<p>At 15th level, you can also cast one of the following spells without a spell slot and regain the ability to do so when you finish a Long Rest: antimagic field, glibness, maze, or mind blank.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>Cast antimagic field, glibness, maze, or mind blank without a spell slot.</description>
+		</sheet>
+	</element>
+
+	<element name="Enigma Arcane (17th Level)" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_ENIGMA_ARCANE_9">
+		<description>
+			<p>At 17th level, you can also cast one of the following spells without a spell slot and regain the ability to do so when you finish a Long Rest: astral projection, gate, or weird.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>Cast astral projection, gate, or weird without a spell slot.</description>
+		</sheet>
+	</element>
+
+	<element name="Supernatural Resolve" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_SUPERNATURAL_RESOLVE">
+		<description>
+			<p>At 18th level, you have Advantage on saving throws against spells and other magical effects, unless you have the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>Advantage on saves vs. spells and magical effects, unless Incapacitated.</description>
+		</sheet>
+	</element>
+
+	<element name="Epic Boon" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_EPIC_BOON">
+		<description>
+			<p>At 19th level, you gain an Epic Boon feat or another feat of your choice for which you qualify.</p>
+		</description>
+		<sheet display="false">
+			<description>Gain an Epic Boon feat or another feat you qualify for.</description>
+		</sheet>
+		<rules>
+			<select type="Class Feature" name="Improvement Option (Investigator 2024, 19, Epic Boon)" supports="Improvement Option,Investigator,19" level="19" />
+		</rules>
+	</element>
+
+	<element name="Spellbinder" type="Class Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_CLASS_FEATURE_SPELLBINDER">
+		<description>
+			<p>At 20th level, choose 5 Investigator spells in your grimoire of levels 1&#x2013;3 that have a casting time of an action or Bonus Action. You can use Rushed Incantation to cast the chosen spells without expending a use of the feature, and you don&#x27;t need to read from your grimoire to cast them. Whenever you finish a Long Rest, you can replace one of those spells with another spell in your grimoire.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>Choose five 1st&#x2013;3rd level grimoire spells; cast them via Rushed Incantation without spending a use, and without your grimoire on hand.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Spellbinder Spell (2024)" supports="Investigator Ritual" number="5" spellcasting="Investigator Ritualist (2024)" />
+		</rules>
+	</element>
+
+	<!-- ===================== EXTERMINATOR (2024) ===================== -->
+
+	<element name="Exterminator (2024)" type="Archetype" source="Complete Investigator (2024)" id="ID_MHP_CI2024_ARCHETYPE_EXTERMINATOR">
+		<supports>Investigator Occult Specialization 2024</supports>
+		<description>
+			<p>An Exterminator suffers no monster to live. Trained in the art of slaying Aberrations, Fiends, and Undead, you stand against evil where others falter, and draw your blade before others recognize a threat.</p>
+			<h5>Exterminator Features</h5>
+			<p>3rd Level: Silvered Shield, Trinkets. 6th Level: Monster Slayer. 10th Level: Silvered Edge. 14th Level: Killer Instinct.</p>
+		</description>
+		<rules>
+			<grant type="Archetype Feature" id="ID_MHP_CI2024_ARCHETYPE_FEATURE_EXTERMINATOR_SILVERED_SHIELD" level="3" />
+			<grant type="Archetype Feature" id="ID_MHP_CI2024_ARCHETYPE_FEATURE_EXTERMINATOR_TRINKETS" level="3" />
+			<grant type="Archetype Feature" id="ID_MHP_CI2024_ARCHETYPE_FEATURE_EXTERMINATOR_MONSTER_SLAYER" level="6" />
+			<grant type="Archetype Feature" id="ID_MHP_CI2024_ARCHETYPE_FEATURE_EXTERMINATOR_SILVERED_EDGE" level="10" />
+			<grant type="Archetype Feature" id="ID_MHP_CI2024_ARCHETYPE_FEATURE_EXTERMINATOR_KILLER_INSTINCT" level="14" />
+		</rules>
+	</element>
+
+	<element name="Silvered Shield" type="Archetype Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_ARCHETYPE_FEATURE_EXTERMINATOR_SILVERED_SHIELD">
+		<description>
+			<p>Your monster hunting experience grants you the following benefits.</p>
+			<p>Armor Training: you have training with Medium armor and Shields.</p>
+			<p>Intelligent Defense: while wearing Medium armor, you can add your Intelligence, instead of Dexterity, to your Armor Class.</p>
+		</description>
+		<sheet>
+			<description>Gain Medium armor and Shield training; while wearing Medium armor, use Intelligence instead of Dexterity for AC.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" />
+		</rules>
+	</element>
+
+	<element name="Exterminator Trinkets" type="Archetype Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_ARCHETYPE_FEATURE_EXTERMINATOR_TRINKETS">
+		<description>
+			<p>You can use the following trinkets, expending a use of your Trinkets to do so.</p>
+			<p>Consecrated Whetstone: as a Bonus Action, cast magic weapon once without a spell slot or components.</p>
+			<p>Gilded Dragon Scale: as a Bonus Action, choose Acid, Cold, Fire, Force, Lightning, Poison, or Thunder damage. You gain Resistance to the chosen damage type for 1 minute.</p>
+			<p>Mimic-Tooth Necklace: when you hit a creature with an attack using a weapon, you can take a Bonus Action to deal an extra 2d8 Acid damage to the creature.</p>
+		</description>
+		<sheet action="Bonus Action" usage="Trinket use">
+			<description>Use Consecrated Whetstone, Gilded Dragon Scale, or Mimic-Tooth Necklace.</description>
+		</sheet>
+	</element>
+
+	<element name="Monster Slayer" type="Archetype Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_ARCHETYPE_FEATURE_EXTERMINATOR_MONSTER_SLAYER">
+		<description>
+			<p>As a Bonus Action, you can make one attack with a weapon or an Unarmed Strike. You can use this feature a number of times equal to your Intelligence modifier (minimum of once). You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="Int mod (min 1)/Long Rest (1/Short Rest)">
+			<description>Make one weapon or Unarmed Strike attack as a Bonus Action.</description>
+		</sheet>
+	</element>
+
+	<element name="Silvered Edge" type="Archetype Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_ARCHETYPE_FEATURE_EXTERMINATOR_SILVERED_EDGE">
+		<description>
+			<p>Your monster-killing expertise grants you the following benefits.</p>
+			<p>Flexible Mastery: when you attack with a weapon whose mastery property you can use, you can replace that property with the Sap or Vex property for that attack.</p>
+			<p>Supernatural Strikes: whenever you deal damage with a weapon, it can deal your choice of Force damage or its normal damage type.</p>
+		</description>
+		<sheet>
+			<description>Swap a weapon's mastery property for Sap or Vex on an attack; deal Force damage or normal type with weapon attacks.</description>
+		</sheet>
+	</element>
+
+	<element name="Killer Instinct" type="Archetype Feature" source="Complete Investigator (2024)" id="ID_MHP_CI2024_ARCHETYPE_FEATURE_EXTERMINATOR_KILLER_INSTINCT">
+		<description>
+			<p>You can use your Exploit Weakness twice on your turn, but can&#x27;t use it against the same target more than once.</p>
+		</description>
+		<sheet>
+			<description>Use Exploit Weakness twice per turn, never twice against the same target.</description>
+		</sheet>
+	</element>
+
+</elements>

@@ -2,15 +2,16 @@
 <index>
 	<info>
 		<name>Complete Investigator</name>
-		<description>Investigator class, Detective and Exterminator occult specializations, base features, and new spells from Complete Investigator.</description>
+		<description>Investigator class (2019 and 2024), Detective occult specialization (2019), Exterminator occult specialization (2024), base features, and new spells from Complete Investigator.</description>
 		<author url="https://www.magehandpress.com/">Mage Hand Press</author>
-		<update version="0.1.2">
+		<update version="0.2.0">
 			<file name="complete-investigator.index" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/refs/heads/main/complete-investigator.index" />
 		</update>
 	</info>
 	<files>
 		<file name="source.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/source.xml" />
 		<file name="class-investigator.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/class-investigator.xml" />
+		<file name="class-investigator-2024.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/class-investigator-2024.xml" />
 		<file name="spells.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/spells.xml" />
 	</files>
 </index>
