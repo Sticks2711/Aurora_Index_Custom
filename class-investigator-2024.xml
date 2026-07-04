@@ -275,10 +275,10 @@
 			<p>At 19th level, you gain an Epic Boon feat or another feat of your choice for which you qualify.</p>
 		</description>
 		<sheet display="false">
-			<description>Gain an Epic Boon feat or another feat you qualify for.</description>
+			<description>Gain an Epic Boon feat.</description>
 		</sheet>
 		<rules>
-			<select type="Class Feature" name="Improvement Option (Investigator 2024, 19, Epic Boon)" supports="Improvement Option,Investigator,19" level="19" />
+			<select type="Class Feature" name="Epic Boon (Investigator 2024)" supports="Epic Boon" level="19" />
 		</rules>
 	</element>
 
