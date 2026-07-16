@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<elements>
+	<info>
+		<name>Warforged Variant - Soulborn</name>
+		<description>Adds the Soulborn variant to the Eberron: Rising from the Last War Warforged. Requires the Aurora Legacy "Eberron: Rising from the Last War" content to be installed, as this file references its Warforged element.</description>
+		<update version="0.1.0">
+			<file name="race-warforged-soulborn.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/race-warforged-soulborn.xml" />
+		</update>
+	</info>
+
+	<!--
+		Aurora Legacy's Warforged (ID_WOTC_ERLW_RACE_WARFORGED) has no subrace selector of its own.
+		This appends one to it so Soulborn (and any future Warforged variants) can be chosen after
+		selecting Warforged. Their file is left untouched, so their auto-updates won't clobber this.
+	-->
+	<element name="Warforged Variant" type="Racial Trait" source="Complete Investigator (2024)" id="ID_STICKS_RACIAL_TRAIT_WARFORGED_VARIANT_SELECT">
+		<description>
+			<p>Some warforged were built to a specialized pattern. You may choose a warforged variant.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Sub Race" name="Warforged Variant" supports="Warforged Variant" optional="true" />
+		</rules>
+	</element>
+
+	<append id="ID_WOTC_ERLW_RACE_WARFORGED">
+		<rules>
+			<grant type="Racial Trait" id="ID_STICKS_RACIAL_TRAIT_WARFORGED_VARIANT_SELECT" />
+		</rules>
+	</append>
+
+	<element name="Soulborn" type="Sub Race" source="Complete Investigator (2024)" id="ID_STICKS_SUBRACE_WARFORGED_SOULBORN">
+		<supports>Warforged Variant</supports>
+		<requirements>ID_WOTC_ERLW_RACE_WARFORGED</requirements>
+		<description>
+			<p>Something took hold in the hollow of your frame that House Cannith never designed and cannot account for. Where other warforged were built to serve a function, you carry a soul that arrived from somewhere else&#x2014;bound into steel and darkwood, wearing a body that was never meant to house it.</p>
+			<p>Soulborn wear borrowed faces and leave no arcane wake. Whatever you are, the world&#x27;s divinations slide off you, and the face you present is rarely the one you were forged with.</p>
+			<p>You have all the traits of a Warforged, plus the following.</p>
+			<p class="indent"><strong><em>Flesh Disguise.</em></strong> You can cast the <em>Disguise Self</em> spell at will, without expending a spell slot or requiring material components. Charisma is your spellcasting ability for this spell.</p>
+			<p class="indent"><strong><em>Magic Obfuscation.</em></strong> You are permanently under the effects of the <em>Nondetection</em> spell, requiring no spell slot or material components. This effect can&#x27;t be dispelled, and it ends only if you choose to suppress it (no action required); you can resume it at any time (no action required).</p>
+		</description>
+		<sheet display="false">
+			<description>A warforged housing a soul that was never meant to be there.</description>
+		</sheet>
+		<rules>
+			<grant type="Racial Trait" id="ID_STICKS_RACIAL_TRAIT_SOULBORN_FLESH_DISGUISE" />
+			<grant type="Racial Trait" id="ID_STICKS_RACIAL_TRAIT_SOULBORN_MAGIC_OBFUSCATION" />
+		</rules>
+	</element>
+
+	<element name="Flesh Disguise" type="Racial Trait" source="Complete Investigator (2024)" id="ID_STICKS_RACIAL_TRAIT_SOULBORN_FLESH_DISGUISE">
+		<description>
+			<p>You can cast the <em>Disguise Self</em> spell at will, without expending a spell slot or requiring material components. Charisma is your spellcasting ability for this spell.</p>
+		</description>
+		<sheet usage="At will">
+			<description>You can cast Disguise Self at will, without a spell slot or material components.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" spellcasting="Soulborn" prepared="true" />
+		</rules>
+	</element>
+
+	<element name="Magic Obfuscation" type="Racial Trait" source="Complete Investigator (2024)" id="ID_STICKS_RACIAL_TRAIT_SOULBORN_MAGIC_OBFUSCATION">
+		<description>
+			<p>You are permanently under the effects of the <em>Nondetection</em> spell, requiring no spell slot or material components. This effect can&#x27;t be dispelled, and it ends only if you choose to suppress it (no action required); you can resume it at any time (no action required).</p>
+			<p>You can&#x27;t be targeted by any Divination magic or perceived through magical scrying sensors. Note that, as with the spell, this does not conceal you from ordinary senses or from nonmagical means of detection.</p>
+		</description>
+		<sheet>
+			<description>You are permanently under the effects of Nondetection: you can't be targeted by Divination magic or perceived through magical scrying sensors. You can suppress or resume this (no action required).</description>
+		</sheet>
+	</element>
+
+</elements>

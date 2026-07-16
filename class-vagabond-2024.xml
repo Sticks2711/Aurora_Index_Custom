@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<elements>
+	<info>
+		<name>Complete Vagabond - Vagabond Class (2024)</name>
+		<description>The Vagabond class and the Rōnin subclass from Complete Vagabond (2024 rules).</description>
+		<author url="https://www.magehandpress.com/">Mage Hand Press</author>
+		<update version="0.1.0">
+			<file name="class-vagabond-2024.xml" url="https://raw.githubusercontent.com/Sticks2711/Aurora_Index_Custom/main/class-vagabond-2024.xml" />
+		</update>
+	</info>
+
+	<element name="Vagabond" type="Class" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_VAGABOND">
+		<description>
+			<p>A Vagabond&#x27;s only home is the open road. Their endless journey would leave others dead on the roadside, but they endure through a desperate will to survive and a mastery of fierce combat maneuvers.</p>
+			<h5>Core Traits</h5>
+			<p>Primary Ability: Strength or Dexterity. Hit Point Die: d10 per Vagabond level. Saving Throw Proficiencies: Strength and Constitution. Skill Proficiencies: choose two from Acrobatics, Animal Handling, Athletics, Deception, Insight, Intimidation, Perception, Stealth, and Survival. Weapon Proficiencies: simple and martial weapons. Armor Training: Light, Medium, and Heavy armor and Shields.</p>
+			<h5>Starting Equipment</h5>
+			<p>Choose A, B, or C: (A) Chain Mail, Greatsword, 4 Handaxes, Explorer&#x27;s Pack, and 15 GP; (B) Studded Leather Armor, 2 Scimitars, Longbow, 20 Arrows, Quiver, Explorer&#x27;s Pack, and 13 GP; or (C) 170 GP.</p>
+		</description>
+		<sheet display="false">
+			<description>A dangerous drifter who survives the open road through desperate maneuvers.</description>
+		</sheet>
+		<setters>
+			<set name="short">A dangerous drifter who fights hardest when cornered, fueling deadly maneuvers with Battle Dice.</set>
+			<set name="hd">d10</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<select type="Proficiency" name="Skill Proficiency (Vagabond)" supports="Skill,Vagabond" number="2" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_SECRET" level="1" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_BATTLE_TACTICS" level="1" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_WEAPON_MASTERY" level="1" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_BREATHER" level="2" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_DESPERATE_ATTACK" level="2" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_SUBCLASS" level="3" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_OVEREXERTION" level="3" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_ABILITY_SCORE_IMPROVEMENT" level="4" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_EXTRA_ATTACK" level="5" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_METTLE" level="7" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_LAST_STAND" level="9" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_DESPERATE_FURY" level="11" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_TENACITY" level="13" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_DESPERATE_SURVIVAL" level="15" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_DEFT_MANEUVER" level="17" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_WAYWORN" level="18" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_EPIC_BOON" level="19" />
+			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_MARTIAL_RECOVERY" level="20" />
+		</rules>
+		<multiclass id="ID_MHP_CV2024_MULTICLASS_VAGABOND">
+			<prerequisite>Strength 13 or Dexterity 13</prerequisite>
+			<requirements>[str:13]|[dex:13]</requirements>
+			<setters>
+				<set name="multiclass proficiencies">Martial weapons, Light and Medium armor, and Shields.</set>
+			</setters>
+			<rules>
+				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			</rules>
+		</multiclass>
+	</element>
+
+	<!-- ===================== SECRET ===================== -->
+
+	<element name="Secret" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_SECRET">
+		<description>
+			<p>For a reason that you keep utterly secret, you have committed to a life of endless travel. Choose this secret from the available options.</p>
+		</description>
+		<sheet display="false">
+			<description>Choose the secret reason you committed to a life of endless travel.</description>
+		</sheet>
+		<rules>
+			<select type="Class Feature" name="Secret" supports="Vagabond Secret" />
+		</rules>
+	</element>
+
+	<element name="Avenger" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_SECRET_AVENGER">
+		<supports>Vagabond Secret</supports>
+		<description>
+			<p>You are on a mission to exact vengeance. You gain a bonus to Initiative rolls equal to your Constitution modifier (minimum bonus of +1).</p>
+			<p>Additionally, choose up to five specific creatures that you wish to seek revenge against. You must know these creatures&#x27; names or must otherwise have enough information to identify them. Your attacks with weapons and Unarmed Strikes against the chosen creatures deal an extra 1d8 damage on a hit. The damage is the same type dealt by the weapon or Unarmed Strike.</p>
+		</description>
+		<sheet alt="Secret: Avenger">
+			<description>Initiative bonus equal to your Constitution modifier (min +1). Attacks against up to five chosen quarries deal an extra 1d8 damage.</description>
+		</sheet>
+		<rules>
+			<stat name="initiative:misc" value="constitution:modifier" bonus="secret" />
+		</rules>
+	</element>
+
+	<element name="Cursed" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_SECRET_CURSED">
+		<supports>Vagabond Secret</supports>
+		<description>
+			<p>You have been cursed by an item that you must always keep at your side. You have one of the following magic items of your choice: Cloak of Elvenkind, Cloak of Protection, Gloves of Swimming and Climbing, Helm of Telepathy, Ring of Jumping, or Stone of Good Luck. You might have a different item of the GM&#x27;s choice. If this item is more than 5 feet away from yourself, you have Disadvantage on D20 Tests.</p>
+		</description>
+		<sheet alt="Secret: Cursed">
+			<description>You carry a cursed magic item. If it is more than 5 feet away from you, you have Disadvantage on D20 Tests.</description>
+		</sheet>
+	</element>
+
+	<element name="Dying" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_SECRET_DYING">
+		<supports>Vagabond Secret</supports>
+		<description>
+			<p>A terminal, possibly magical, affliction has gripped you. When you roll Initiative and aren&#x27;t Bloodied, you can drop to a number of Hit Points equal to half your maximum and become Bloodied. Additionally, you have Advantage on Death Saving Throws.</p>
+		</description>
+		<sheet alt="Secret: Dying">
+			<description>On Initiative, if not Bloodied, you can drop to half your maximum Hit Points to become Bloodied. Advantage on Death Saving Throws.</description>
+		</sheet>
+	</element>
+
+	<element name="Faction Agent" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_SECRET_FACTION_AGENT">
+		<supports>Vagabond Secret</supports>
+		<description>
+			<p>You are secretly a member of an organization, such as a Thieves&#x27; Guild or a secret society. You gain proficiency and Expertise with any skill of your choice. Additionally, you gain proficiency in one tool and learn one language of your choice.</p>
+		</description>
+		<sheet alt="Secret: Faction Agent">
+			<description>You are a secret member of an organization, granting a skill with Expertise, a tool proficiency, and a language.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Faction Agent)" supports="Skill" />
+			<select type="Class Feature" name="Expertise (Faction Agent)" supports="ID_INTERNAL_SUPPORT_EXPERTISE" />
+			<select type="Proficiency" name="Tool Proficiency (Faction Agent)" supports="Tool" />
+			<select type="Language" name="Language (Faction Agent)" supports="Standard||Exotic" />
+		</rules>
+	</element>
+
+	<element name="False Identity" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_SECRET_FALSE_IDENTITY">
+		<supports>Vagabond Secret</supports>
+		<description>
+			<p>You magically conceal your true appearance. You can cast Disguise Self without a spell slot or components. When you cast the spell using this secret, you can only change your appearance to match a pre-established second identity. Whenever you gain a Vagabond level, you can change how this second identity looks when you cast the spell in this way.</p>
+			<p>Additionally, when you choose this secret, choose one falsehood about yourself. This falsehood can be a single lie or an entire false history. You never need to make a Deception check for this falsehood.</p>
+		</description>
+		<sheet alt="Secret: False Identity">
+			<description>Cast Disguise Self without a spell slot or components (only to match your second identity). One chosen falsehood never requires a Deception check.</description>
+		</sheet>
+	</element>
+
+	<element name="Fugitive" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_SECRET_FUGITIVE">
+		<supports>Vagabond Secret</supports>
+		<description>
+			<p>You are being hunted. You might be fleeing the authorities, a wayward assassin, or a supernatural force. Your Speed increases by 5 feet. Additionally, once per turn, you can give a creature Disadvantage on an Opportunity Attack it makes against you.</p>
+		</description>
+		<sheet alt="Secret: Fugitive" usage="1/Turn">
+			<description>Your Speed increases by 5 feet. Once per turn, give a creature Disadvantage on an Opportunity Attack against you.</description>
+		</sheet>
+		<rules>
+			<stat name="speed" value="5" />
+		</rules>
+	</element>
+
+	<element name="Heretic" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_SECRET_HERETIC">
+		<supports>Vagabond Secret</supports>
+		<description>
+			<p>You hold a forbidden belief or honor a sinister deity. You gain proficiency in the Arcana and Religion skills. You also learn two cantrips of your choice from the Warlock spell list. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this secret (choose the ability when you select the secret).</p>
+		</description>
+		<sheet alt="Secret: Heretic">
+			<description>Proficiency in Arcana and Religion, and two Warlock cantrips.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+			<select type="Spell" name="Warlock Cantrip (Heretic)" supports="Warlock,0" number="2" spellcasting="Vagabond Heretic" />
+		</rules>
+	</element>
+
+	<element name="Monstrous" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_SECRET_MONSTROUS">
+		<supports>Vagabond Secret</supports>
+		<description>
+			<p>You conceal an abominable side that emerges when you&#x27;re injured. You might be afflicted with lycanthropy, an eldritch curse, or vampirism. You have Darkvision with a range of 60 feet. If you already have Darkvision, its range increases by 60 feet. Additionally, while you are Bloodied, your size is Large and you have Advantage on Strength checks and saving throws.</p>
+		</description>
+		<sheet alt="Secret: Monstrous">
+			<description>Darkvision 60 ft. (or +60 ft. if you have it). While Bloodied, your size is Large and you have Advantage on Strength checks and saving throws.</description>
+		</sheet>
+		<rules>
+			<grant type="Vision" id="ID_INTERNAL_VISION_DARKVISION_60" />
+		</rules>
+	</element>
+
+	<element name="Nobility" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_SECRET_NOBILITY">
+		<supports>Vagabond Secret</supports>
+		<description>
+			<p>You are of noble descent, now disgraced or disowned. You gain proficiency in the History and Persuasion skills. Additionally, you can take the Influence action as a Bonus Action.</p>
+		</description>
+		<sheet alt="Secret: Nobility" action="Bonus Action">
+			<description>Proficiency in History and Persuasion. You can take the Influence action as a Bonus Action.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+		</rules>
+	</element>
+
+	<!-- ===================== BATTLE TACTICS ===================== -->
+
+	<element name="Battle Tactics" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_BATTLE_TACTICS">
+		<description>
+			<p>You learn maneuvers that are fueled by special dice called Battle Dice.</p>
+			<p><strong>Battle Dice.</strong> You have two Battle Dice, which are d6s. A Battle Die is expended when you use it. You regain all expended Battle Dice when you roll Initiative or finish a Short or Long Rest. Your Battle Die changes and more Battle Dice become available as shown on the Battle Dice column of the Vagabond Features table (2d6 at level 1, 3d6 at 3, 3d8 at 5, 4d8 at 7, 5d8 at 9, 5d10 at 11, 6d10 at 13, 7d10 at 15, 7d12 at 17, 8d12 at 19).</p>
+			<p><strong>Maneuvers.</strong> You learn three maneuvers of your choice for which you meet the prerequisites. You gain additional maneuvers as you gain levels in this class. If another Vagabond feature gives you a maneuver, that maneuver doesn&#x27;t count against your number of maneuvers known. Whenever you gain a Vagabond level, you can choose one of the maneuvers you know and replace it with another maneuver that you could learn at that level.</p>
+			<p><strong>Saving Throws.</strong> If a maneuver requires a saving throw, the DC equals 8 plus your Strength or Dexterity modifier and Proficiency Bonus.</p>
+		</description>
+		<sheet usage="{{battle dice:count}}d{{battle die}}">
+			<description>Battle Dice: {{battle dice:count}}d{{battle die}}. Regained when you roll Initiative or finish a Short or Long Rest. Maneuver save DC {{maneuver dc}}.</description>
+		</sheet>
+		<rules>
+			<stat name="battle die" value="6" />
+			<stat name="battle die" value="2" level="5" bonus="progression" />
+			<stat name="battle die" value="2" level="11" bonus="progression" />
+			<stat name="battle die" value="2" level="17" bonus="progression" />
+
+			<stat name="battle dice:count" value="2" />
+			<stat name="battle dice:count" value="1" level="3" bonus="progression" />
+			<stat name="battle dice:count" value="1" level="7" bonus="progression" />
+			<stat name="battle dice:count" value="1" level="9" bonus="progression" />
+			<stat name="battle dice:count" value="1" level="13" bonus="progression" />
+			<stat name="battle dice:count" value="1" level="15" bonus="progression" />
+			<stat name="battle dice:count" value="1" level="19" bonus="progression" />
+
+			<stat name="maneuver dc" value="8" />
+			<stat name="maneuver dc" value="proficiency" />
+			<stat name="maneuver dc" value="strength:modifier" alt="dexterity:modifier" />
+
+			<select type="Class Feature" name="Maneuver" supports="Vagabond Maneuver" number="3" level="1" />
+			<select type="Class Feature" name="Maneuver" supports="Vagabond Maneuver" level="2" />
+			<select type="Class Feature" name="Maneuver" supports="Vagabond Maneuver" level="3" />
+			<select type="Class Feature" name="Maneuver" supports="Vagabond Maneuver" level="6" />
+			<select type="Class Feature" name="Maneuver" supports="Vagabond Maneuver" level="9" />
+			<select type="Class Feature" name="Maneuver" supports="Vagabond Maneuver" level="12" />
+			<select type="Class Feature" name="Maneuver" supports="Vagabond Maneuver" level="15" />
+			<select type="Class Feature" name="Maneuver" supports="Vagabond Maneuver" level="18" />
+		</rules>
+	</element>
+
+	<!-- ===================== MANEUVERS (no prerequisite) ===================== -->
+
+	<element name="Battle Edge" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_BATTLE_EDGE">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>When you hit a creature with an attack using Strength or Dexterity, you can expend one Battle Die as a Bonus Action to improve the damage roll. Add the Battle die and your Strength or Dexterity modifier (whichever you don&#x27;t already add, minimum of 1) to the attack&#x27;s damage roll.</p>
+		</description>
+		<sheet alt="Maneuver: Battle Edge" action="Bonus Action">
+			<description>On a hit using Str or Dex, expend a Battle Die to add it plus your other of Str/Dex modifier (min 1) to the damage roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Bear Hug" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_BEAR_HUG">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>When you hit a creature with an attack using a Melee weapon or an Unarmed Strike, you can expend one Battle Die as a Bonus Action to attempt to grapple the target. Roll the Battle Die. The target takes extra Bludgeoning damage equal to the roll of the Battle Die, and the target subtracts the Battle Die from its saving throw to avoid or end the Grappled condition.</p>
+		</description>
+		<sheet alt="Maneuver: Bear Hug" action="Bonus Action">
+			<description>On a melee hit, expend a Battle Die to deal extra Bludgeoning damage and grapple; target subtracts the die from saves to avoid or end Grappled.</description>
+		</sheet>
+	</element>
+
+	<element name="Bull Rush" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_BULL_RUSH">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>If you move at least 10 feet in a straight line toward a target immediately before hitting it with a melee attack roll, you can expend one Battle Die as a Bonus Action to perform a Bull Rush. The target takes extra Bludgeoning damage equal to the roll of the Battle Die, and must succeed on a Strength saving throw or be pushed 10 feet away from you and have the Prone condition.</p>
+		</description>
+		<sheet alt="Maneuver: Bull Rush" action="Bonus Action">
+			<description>After moving 10+ ft. in a line and hitting, expend a Battle Die for extra Bludgeoning damage; Str save or pushed 10 ft. and Prone.</description>
+		</sheet>
+	</element>
+
+	<element name="Challenge" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_CHALLENGE">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>When you hit a creature with an attack using a Melee weapon or an Unarmed Strike, you can expend one Battle Die as a Bonus Action to goad the target into attacking you. Add the Battle Die to the attack&#x27;s damage roll. Until the start of your next turn, the target has Disadvantage on attack rolls against creatures other than you while you are within 5 feet of the target.</p>
+		</description>
+		<sheet alt="Maneuver: Challenge" action="Bonus Action">
+			<description>On a melee hit, expend a Battle Die to add it to damage; the target has Disadvantage attacking anyone but you while you're within 5 ft.</description>
+		</sheet>
+	</element>
+
+	<element name="Dig Deep" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_DIG_DEEP">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>As a Bonus Action, you can expend one Battle Die to gain Temporary Hit Points equal to the number rolled on the die plus your Constitution modifier.</p>
+		</description>
+		<sheet alt="Maneuver: Dig Deep" action="Bonus Action">
+			<description>Expend a Battle Die to gain Temporary Hit Points equal to the roll plus your Constitution modifier.</description>
+		</sheet>
+	</element>
+
+	<element name="Dodge Roll" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_DODGE_ROLL">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>You can expend one Battle Die as a Bonus Action to move up to 15 feet and reload any Ranged weapon you are holding. This movement doesn&#x27;t provoke Opportunity Attacks and is unaffected by Difficult Terrain.</p>
+		</description>
+		<sheet alt="Maneuver: Dodge Roll" action="Bonus Action">
+			<description>Expend a Battle Die to move up to 15 ft. without provoking Opportunity Attacks (ignoring Difficult Terrain) and reload a held Ranged weapon.</description>
+		</sheet>
+	</element>
+
+	<element name="Eagle Eye" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_EAGLE_EYE">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>Once per turn when you miss with a ranged attack roll, you can expend one Battle Die and add it to the attack roll, potentially causing the attack to hit.</p>
+		</description>
+		<sheet alt="Maneuver: Eagle Eye" usage="1/Turn">
+			<description>On a missed ranged attack, expend a Battle Die and add it to the attack roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Effortless Dodge" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_EFFORTLESS_DODGE">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>As a Bonus Action, you can expend one Battle Die to take the Disengage or Dodge action. You can&#x27;t use this maneuver while wearing Medium or Heavy armor.</p>
+		</description>
+		<sheet alt="Maneuver: Effortless Dodge" action="Bonus Action">
+			<description>Expend a Battle Die to take the Disengage or Dodge action. Not usable in Medium or Heavy armor.</description>
+		</sheet>
+	</element>
+
+	<element name="Heel-Cutter" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_HEEL_CUTTER">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>When you hit a creature with an attack using a Melee weapon or an Unarmed Strike, you can expend one Battle Die as a Bonus Action to prevent the target from escaping. Add the Battle Die to the attack&#x27;s damage roll. The target must succeed on a Strength saving throw or its Speed becomes 0 until the end of its next turn.</p>
+		</description>
+		<sheet alt="Maneuver: Heel-Cutter" action="Bonus Action">
+			<description>On a melee hit, expend a Battle Die to add it to damage; Str save or the target's Speed becomes 0 until the end of its next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Horrific Strike" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_HORRIFIC_STRIKE">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>When you hit a creature with an attack using a Melee weapon or an Unarmed Strike, you can expend one Battle Die as a Bonus Action to terrify the target. Add the Battle Dice to the attack&#x27;s damage roll. The target has the Frightened condition until the end of your next turn.</p>
+		</description>
+		<sheet alt="Maneuver: Horrific Strike" action="Bonus Action">
+			<description>On a melee hit, expend a Battle Die to add it to damage and give the target the Frightened condition until the end of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Iron Wall" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_IRON_WALL">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>As a Bonus Action, you can expend one Battle Die to fortify yourself. The next time you are hit by an attack within the next minute, roll the Battle Die and add the number rolled to your AC against this attack, potentially causing it to miss. This effect ends early if you have the Incapacitated condition. You must be wearing Heavy armor to use this maneuver.</p>
+		</description>
+		<sheet alt="Maneuver: Iron Wall" action="Bonus Action">
+			<description>Expend a Battle Die; the next attack that hits you within 1 minute adds the die to your AC against it. Requires Heavy armor.</description>
+		</sheet>
+	</element>
+
+	<element name="Knack" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_KNACK">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>When you fail an ability check using a skill in which you have proficiency, you can expend one Battle Die to add it to the roll, potentially turning it into a success. You can only use this maneuver once per turn.</p>
+		</description>
+		<sheet alt="Maneuver: Knack" usage="1/Turn">
+			<description>On a failed ability check with a proficient skill, expend a Battle Die and add it to the roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Lightning Reflexes" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_LIGHTNING_REFLEXES">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>When you roll Initiative, you can expend one Battle Die immediately after regaining your Battle Dice. Add the Battle Die to your Initiative roll. You can&#x27;t use this maneuver if you have the Incapacitated condition.</p>
+		</description>
+		<sheet alt="Maneuver: Lightning Reflexes">
+			<description>On Initiative, expend a Battle Die and add it to your Initiative roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Rampage" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_RAMPAGE">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>Once on each of your turns, immediately after you reduce an enemy to 0 Hit Points or score a Critical Hit with a melee attack roll, you can expend one Battle Die to move up to your Speed and make a melee attack (no action required). On a hit, you add the Battle Die to the attack&#x27;s damage roll.</p>
+		</description>
+		<sheet alt="Maneuver: Rampage" usage="1/Turn">
+			<description>After dropping an enemy to 0 HP or scoring a melee Critical Hit, expend a Battle Die to move up to your Speed and make a melee attack.</description>
+		</sheet>
+	</element>
+
+	<element name="Skirmish" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_SKIRMISH">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>When you make an attack using a weapon, you can expend one Battle Die as a Bonus Action to make an attack using a weapon later on the same turn. One attack must be a melee attack roll and the other must be a ranged attack roll.</p>
+		</description>
+		<sheet alt="Maneuver: Skirmish" action="Bonus Action">
+			<description>Expend a Battle Die to make an additional weapon attack this turn; one attack must be melee and the other ranged.</description>
+		</sheet>
+	</element>
+
+	<element name="Staggering Strike" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_STAGGERING_STRIKE">
+		<supports>Vagabond Maneuver</supports>
+		<description>
+			<p>When you hit a creature with an attack using a Melee weapon or an Unarmed Strike, you can expend one Battle Die as a Bonus Action to daze the target. Add the Battle Die to the attack&#x27;s damage roll. The target subtracts the Battle Die from the next attack roll it makes before the end of your next turn.</p>
+		</description>
+		<sheet alt="Maneuver: Staggering Strike" action="Bonus Action">
+			<description>On a melee hit, expend a Battle Die to add it to damage; the target subtracts the die from its next attack roll.</description>
+		</sheet>
+	</element>
+
+	<!-- ===================== MANEUVERS (level 5) ===================== -->
+
+	<element name="Blinding Attack" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_BLINDING_ATTACK">
+		<supports>Vagabond Maneuver</supports>
+		<prerequisite>Vagabond Level 5</prerequisite>
+		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:5</requirements>
+		<description>
+			<p><em>Prerequisite: Vagabond Level 5</em></p>
+			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to attempt to blind the target. Add the Battle Dice to the attack&#x27;s damage roll. The target must succeed on a Constitution saving throw or have the Blinded condition for 1 minute. At the end of each of its turns, the target repeats the save, ending the condition on itself on a success.</p>
+		</description>
+		<sheet alt="Maneuver: Blinding Attack" action="Bonus Action">
+			<description>On a hit, expend two Battle Dice to add them to damage; Con save or Blinded for 1 minute (save ends at end of its turns).</description>
+		</sheet>
+	</element>
+
+	<element name="Coup de Grâce" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_COUP_DE_GRACE">
+		<supports>Vagabond Maneuver</supports>
+		<prerequisite>Vagabond Level 5</prerequisite>
+		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:5</requirements>
+		<description>
+			<p><em>Prerequisite: Vagabond Level 5</em></p>
+			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to attempt to execute the target. Add the Battle Dice to the attack&#x27;s damage roll. If you reduce the target to 0 Hit Points, you regain one expended Battle Die.</p>
+		</description>
+		<sheet alt="Maneuver: Coup de Grâce" action="Bonus Action">
+			<description>On a hit, expend two Battle Dice to add them to damage. If this drops the target to 0 HP, regain one expended Battle Die.</description>
+		</sheet>
+	</element>
+
+	<element name="Ruinous Blow" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_RUINOUS_BLOW">
+		<supports>Vagabond Maneuver</supports>
+		<prerequisite>Vagabond Level 5</prerequisite>
+		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:5</requirements>
+		<description>
+			<p><em>Prerequisite: Vagabond Level 5</em></p>
+			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to sunder its defenses. Add the Battle Dice to the attack&#x27;s damage roll. The target has a &#x2212;3 penalty to AC until the end of your next turn.</p>
+		</description>
+		<sheet alt="Maneuver: Ruinous Blow" action="Bonus Action">
+			<description>On a hit, expend two Battle Dice to add them to damage; the target has a −3 penalty to AC until the end of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Wounding Strike" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_WOUNDING_STRIKE">
+		<supports>Vagabond Maneuver</supports>
+		<prerequisite>Vagabond Level 5</prerequisite>
+		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:5</requirements>
+		<description>
+			<p><em>Prerequisite: Vagabond Level 5</em></p>
+			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to deal the target a bleeding wound. Add the Battle Dice to the attack&#x27;s damage roll. A creature with a bleeding wound can&#x27;t regain Hit Points and takes Necrotic damage equal to a roll of your Battle Die for each of its wounds at the start of each of its turns. This damage ignores Resistance and Immunity. A creature can take an action to staunch all of its bleeding wounds.</p>
+		</description>
+		<sheet alt="Maneuver: Wounding Strike" action="Bonus Action">
+			<description>On a hit, expend two Battle Dice to inflict a bleeding wound: the target can't regain HP and takes Battle Die Necrotic damage per wound each turn.</description>
+		</sheet>
+	</element>
+
+	<!-- ===================== MANEUVERS (level 11) ===================== -->
+
+	<element name="Flourish" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_FLOURISH">
+		<supports>Vagabond Maneuver</supports>
+		<prerequisite>Vagabond Level 11</prerequisite>
+		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:11</requirements>
+		<description>
+			<p><em>Prerequisite: Vagabond Level 11</em></p>
+			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice to perform a graceful flourish. Add the Battle Dice to the attack&#x27;s damage roll. Choose two of the following effects.</p>
+			<ul>
+				<li>The target has Disadvantage on its next D20 Test before the start of your next turn.</li>
+				<li>If the target can make multiple attacks on its turn, it makes one fewer attack than normal, to a minimum of one. You choose which attack is interrupted.</li>
+				<li>The target can&#x27;t make Opportunity Attacks until the start of its next turn. If it has Legendary Actions, it loses one use until the start of its next turn.</li>
+				<li>The target drops one object of your choice that it&#x27;s holding, with the object landing in a space you choose up to 15 feet away from the target.</li>
+			</ul>
+		</description>
+		<sheet alt="Maneuver: Flourish">
+			<description>On a hit, expend three Battle Dice to add them to damage and apply two flourish effects of your choice.</description>
+		</sheet>
+	</element>
+
+	<element name="Riposte" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_RIPOSTE">
+		<supports>Vagabond Maneuver</supports>
+		<prerequisite>Vagabond Level 11</prerequisite>
+		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:11</requirements>
+		<description>
+			<p><em>Prerequisite: Vagabond Level 11</em></p>
+			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice as a Bonus Action to enter a defensive stance against it. Add the Battle Dice to the attack&#x27;s damage roll. Once before the start of your next turn, when the target makes an attack against you, you can take a Reaction to make one attack with a weapon against the attacker. Resolve your attack before the triggering attack. On a hit, its attack automatically misses you.</p>
+		</description>
+		<sheet alt="Maneuver: Riposte" action="Bonus Action">
+			<description>On a hit, expend three Battle Dice to enter a defensive stance; Reaction attack against the target's next attack on you, and a hit makes it miss.</description>
+		</sheet>
+	</element>
+
+	<element name="Stunning Blow" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_STUNNING_BLOW">
+		<supports>Vagabond Maneuver</supports>
+		<prerequisite>Vagabond Level 11</prerequisite>
+		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:11</requirements>
+		<description>
+			<p><em>Prerequisite: Vagabond Level 11</em></p>
+			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice as a Bonus Action to attempt to stun the target. Add the Battle Dice to the attack&#x27;s damage roll. The target must succeed on a Constitution saving throw or have the Stunned condition for 1 minute. At the end of each of its turns, the target repeats the save, ending the condition on itself on a success.</p>
+		</description>
+		<sheet alt="Maneuver: Stunning Blow" action="Bonus Action">
+			<description>On a hit, expend three Battle Dice to add them to damage; Con save or Stunned for 1 minute (save ends at end of its turns).</description>
+		</sheet>
+	</element>
+
+	<element name="Whirlwind" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_WHIRLWIND">
+		<supports>Vagabond Maneuver</supports>
+		<prerequisite>Vagabond Level 11</prerequisite>
+		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:11</requirements>
+		<description>
+			<p><em>Prerequisite: Vagabond Level 11</em></p>
+			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice to make up to three extra melee or ranged attacks using a weapon. Each attack must be against a different target within the weapon&#x27;s range that you haven&#x27;t attacked this turn. On a hit with one of these extra attacks, add a Battle Die to the damage roll.</p>
+		</description>
+		<sheet alt="Maneuver: Whirlwind">
+			<description>On a hit, expend three Battle Dice to make up to three extra weapon attacks against different targets you haven't attacked this turn.</description>
+		</sheet>
+	</element>
+
+	<!-- ===================== REMAINING CLASS FEATURES ===================== -->
+
+	<element name="Weapon Mastery" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_WEAPON_MASTERY">
+		<description>
+			<p>Your training with weapons allows you to use the mastery properties of two kinds of Simple or Martial weapons of your choice. Whenever you finish a Long Rest, you can practice weapon drills and change one of those weapon choices.</p>
+			<p>You can use the mastery properties of more kinds of weapons at higher levels: 3 kinds at level 4, and 4 kinds at level 10.</p>
+		</description>
+		<sheet>
+			<description>Use the Mastery property of {{vagabond weapon mastery}} kinds of weapons; change one on a Long Rest.</description>
+		</sheet>
+		<rules>
+			<stat name="vagabond weapon mastery" value="2" />
+			<stat name="vagabond weapon mastery" value="1" level="4" bonus="progression" />
+			<stat name="vagabond weapon mastery" value="1" level="10" bonus="progression" />
+			<!-- NOTE: map this selector to your ruleset's native Weapon Mastery support tag if different. -->
+			<select type="Class Feature" name="Weapon Mastery (Vagabond)" supports="Weapon Mastery" number="2" level="1" />
+			<select type="Class Feature" name="Weapon Mastery (Vagabond)" supports="Weapon Mastery" level="4" />
+			<select type="Class Feature" name="Weapon Mastery (Vagabond)" supports="Weapon Mastery" level="10" />
+		</rules>
+	</element>
+
+	<element name="Breather" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_BREATHER">
+		<description>
+			<p>As an action, you can expend one of your Hit Point Dice, roll the die, and regain a number of Hit Points equal to the roll plus your Constitution modifier (minimum of 1 Hit Point).</p>
+		</description>
+		<sheet action="Action">
+			<description>Expend a Hit Point Die to regain Hit Points equal to the roll plus your Constitution modifier (min 1).</description>
+		</sheet>
+	</element>
+
+	<element name="Desperate Attack" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_DESPERATE_ATTACK">
+		<description>
+			<p>You have Advantage on attack rolls while you are Bloodied.</p>
+		</description>
+		<sheet>
+			<description>Advantage on attack rolls while you are Bloodied.</description>
+		</sheet>
+	</element>
+
+	<element name="Vagabond Subclass" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_SUBCLASS">
+		<description>
+			<p>You gain a Vagabond subclass of your choice. For the rest of your career, you gain each of your subclass&#x27;s features that are of your Vagabond level or lower.</p>
+		</description>
+		<sheet>
+			<description>Choose a Vagabond subclass.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype" name="Vagabond Subclass" supports="Vagabond Subclass" />
+		</rules>
+	</element>
+
+	<element name="Overexertion" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_OVEREXERTION">
+		<description>
+			<p>If you have no Battle Dice remaining, you can regain one Battle Die to immediately expend it and use a maneuver or Vagabond feature. When you do so, you take Necrotic damage equal to one roll of the Battle Die. This damage ignores your Resistance and Immunity, and bypasses your Temporary Hit Points.</p>
+		</description>
+		<sheet>
+			<description>With no Battle Dice left, regain one to immediately spend it, taking Necrotic damage equal to one roll of the Battle Die (ignores Resistance, Immunity, and Temp HP).</description>
+		</sheet>
+	</element>
+
+	<element name="Ability Score Improvement" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_ABILITY_SCORE_IMPROVEMENT">
+		<description>
+			<p>You gain the Ability Score Improvement feat or another feat of your choice for which you qualify. You gain this feature again at Vagabond levels 8, 12, and 16.</p>
+		</description>
+		<sheet display="false">
+			<description>Gain the Ability Score Improvement feat or another feat you qualify for.</description>
+		</sheet>
+		<rules>
+			<select type="Class Feature" name="Improvement Option (Vagabond, 4)" supports="Improvement Option,Vagabond,4" level="4" />
+			<select type="Class Feature" name="Improvement Option (Vagabond, 8)" supports="Improvement Option,Vagabond,8" level="8" />
+			<select type="Class Feature" name="Improvement Option (Vagabond, 12)" supports="Improvement Option,Vagabond,12" level="12" />
+			<select type="Class Feature" name="Improvement Option (Vagabond, 16)" supports="Improvement Option,Vagabond,16" level="16" />
+		</rules>
+	</element>
+
+	<element name="Extra Attack" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_EXTRA_ATTACK">
+		<description>
+			<p>You can attack twice instead of once whenever you take the Attack action on your turn.</p>
+		</description>
+		<sheet>
+			<description>Attack twice whenever you take the Attack action.</description>
+		</sheet>
+	</element>
+
+	<element name="Mettle" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_METTLE">
+		<description>
+			<p>Your determination allows you to shrug off effects that would otherwise harm you. When you&#x27;re subjected to an effect that allows you to make a Constitution saving throw to take only half damage, you instead take no damage if you succeed on the saving throw and only half damage if you fail. You can&#x27;t use this feature if you have the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>On effects allowing a Con save for half damage: take no damage on a success, half on a failure. Not while Incapacitated.</description>
+		</sheet>
+	</element>
+
+	<element name="Last Stand" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_LAST_STAND">
+		<description>
+			<p>When you are reduced to 0 Hit Points and not killed outright, you can drop to 1 Hit Point instead, and you regain a number of Hit Points equal to twice your Vagabond level.</p>
+			<p>Once you use this feature, you can&#x27;t use it again until you finish a Long Rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When reduced to 0 HP and not killed outright, drop to 1 HP instead and regain Hit Points equal to twice your Vagabond level.</description>
+		</sheet>
+	</element>
+
+	<element name="Desperate Fury" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_DESPERATE_FURY">
+		<description>
+			<p>While you are Bloodied, your attacks with weapons and Unarmed Strikes deal an extra 1d8 damage on a hit. The damage is the same type dealt by the weapon or Unarmed Strike.</p>
+		</description>
+		<sheet>
+			<description>While Bloodied, your weapon and Unarmed Strike hits deal an extra 1d8 damage of the weapon's type.</description>
+		</sheet>
+	</element>
+
+	<element name="Tenacity" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_TENACITY">
+		<description>
+			<p>If you fail a saving throw to avoid or end a condition on yourself, you can expend one Battle Die to reroll the save and add the Battle Die to the roll. You must use the new roll.</p>
+		</description>
+		<sheet>
+			<description>On a failed save to avoid or end a condition, expend a Battle Die to reroll and add the die. You must use the new roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Desperate Survival" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_DESPERATE_SURVIVAL">
+		<description>
+			<p>While you are Bloodied, Critical Hits against you instead miss unless you have the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>While Bloodied and not Incapacitated, Critical Hits against you instead miss.</description>
+		</sheet>
+	</element>
+
+	<element name="Deft Maneuver" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_DEFT_MANEUVER">
+		<description>
+			<p>You gain a special additional Bonus Action that you can take once on each of your turns. You can take this special Bonus Action only to use a maneuver.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Turn">
+			<description>A special additional Bonus Action each turn, usable only to perform a maneuver.</description>
+		</sheet>
+	</element>
+
+	<element name="Wayworn" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_WAYWORN">
+		<description>
+			<p>You are always considered Bloodied for the purpose of your Vagabond features.</p>
+		</description>
+		<sheet>
+			<description>You are always considered Bloodied for the purpose of your Vagabond features.</description>
+		</sheet>
+	</element>
+
+	<element name="Epic Boon" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_EPIC_BOON">
+		<description>
+			<p>You gain an Epic Boon feat or another feat of your choice for which you qualify.</p>
+		</description>
+		<sheet display="false">
+			<description>Gain an Epic Boon feat.</description>
+		</sheet>
+		<rules>
+			<select type="Class Feature" name="Epic Boon (Vagabond)" supports="Epic Boon" level="19" />
+		</rules>
+	</element>
+
+	<element name="Martial Recovery" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_FEATURE_MARTIAL_RECOVERY">
+		<description>
+			<p>You can take a Bonus Action to regain all of your expended Battle Dice.</p>
+			<p>Once you use this feature, you can&#x27;t use it again until you finish a Short or Long Rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>Regain all of your expended Battle Dice.</description>
+		</sheet>
+	</element>
+
+	<!-- ===================== RŌNIN ===================== -->
+
+	<element name="Rōnin" type="Archetype" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_ARCHETYPE_RONIN">
+		<supports>Vagabond Subclass</supports>
+		<description>
+			<p><em>Master the Sword to Survive in a Harsh World</em></p>
+			<p>You were once an honorable blademaster without peer. But those days are long gone. Disgraced and despised, people know you only as a dangerous swordmaster&#x2014;someone to be feared. You may search for purpose, a way to redeem the black mark on your honor, or simply to survive another day in your endless journey. Perhaps your broken vows still guide you, or perhaps you have abandoned all semblance of honor; only your conduct and your blade define you.</p>
+			<h5>Rōnin Features</h5>
+			<p>Level 3: Infamy, Grudge. Level 6: Lone Wolf. Level 10: Killing Stroke. Level 14: Swordmaster.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_MHP_CV2024_ARCHETYPE_FEATURE_RONIN_INFAMY" level="3" />
+			<grant type="Archetype Feature" id="ID_MHP_CV2024_ARCHETYPE_FEATURE_RONIN_GRUDGE" level="3" />
+			<grant type="Archetype Feature" id="ID_MHP_CV2024_ARCHETYPE_FEATURE_RONIN_LONE_WOLF" level="6" />
+			<grant type="Archetype Feature" id="ID_MHP_CV2024_ARCHETYPE_FEATURE_RONIN_KILLING_STROKE" level="10" />
+			<grant type="Archetype Feature" id="ID_MHP_CV2024_ARCHETYPE_FEATURE_RONIN_SWORDMASTER" level="14" />
+		</rules>
+	</element>
+
+	<element name="Infamy" type="Archetype Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_ARCHETYPE_FEATURE_RONIN_INFAMY">
+		<description>
+			<p>Your violent reputation precedes you and gives you the following benefits. Choose the Deception or Intimidation skill. You gain proficiency and Expertise in the chosen skill.</p>
+		</description>
+		<sheet>
+			<description>Gain proficiency and Expertise in Deception or Intimidation.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Infamy)" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<select type="Class Feature" name="Expertise (Infamy)" supports="ID_INTERNAL_SUPPORT_EXPERTISE" />
+		</rules>
+	</element>
+
+	<element name="Grudge" type="Archetype Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_ARCHETYPE_FEATURE_RONIN_GRUDGE">
+		<description>
+			<p>As a Bonus Action, you can hold a grudge against a creature you can see within 30 feet of yourself that has dealt damage to you or one of your allies. This grudge lasts for 1 minute, until the target dies, or until you use this feature&#x27;s Bonus Action again.</p>
+			<p>At the start of each of your turns while you hold a grudge, you gain a Grudge Battle Die, which is a d6. You can only have one such Battle Die at a time. You can only use your Grudge Battle Die to perform maneuvers targeting the creature against whom you hold a grudge.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>Hold a grudge against a creature within 30 ft. that damaged you or an ally, for 1 minute. Each turn you hold it, gain a Grudge Battle Die (d6, max one at a time) usable only for maneuvers targeting that creature.</description>
+		</sheet>
+	</element>
+
+	<element name="Lone Wolf" type="Archetype Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_ARCHETYPE_FEATURE_RONIN_LONE_WOLF">
+		<description>
+			<p>You&#x27;re used to being outnumbered, granting you the following benefits.</p>
+			<p><strong>Outnumbered, Not Outmatched.</strong> When you roll Initiative and there are more enemies than allies in the Initiative order, you have Advantage on your Initiative roll.</p>
+			<p><strong>Stand Alone.</strong> While no ally is within 5 feet of you and you don&#x27;t have the Incapacitated condition, enemies can&#x27;t have Advantage on attack rolls against you.</p>
+		</description>
+		<sheet>
+			<description>Advantage on Initiative when enemies outnumber allies. While no ally is within 5 ft. and you aren't Incapacitated, enemies can't have Advantage on attacks against you.</description>
+		</sheet>
+	</element>
+
+	<element name="Killing Stroke" type="Archetype Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_ARCHETYPE_FEATURE_RONIN_KILLING_STROKE">
+		<description>
+			<p>When a creature you can see within 5 feet of yourself makes an attack against you, you can take a Reaction to make one attack with a Melee weapon against the attacker. You can draw a weapon as a part of this Reaction. Resolve your attack before the triggering attack. On a hit, the triggering attack automatically misses you.</p>
+			<p>Once you use this feature, you can&#x27;t use it again until you finish a Short or Long Rest unless you expend two Battle Dice (no action required) to restore your use of it.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Short Rest">
+			<description>When a creature within 5 ft. attacks you, make a Melee weapon attack against it first; on a hit, its attack automatically misses. Restore with 2 Battle Dice.</description>
+		</sheet>
+	</element>
+
+	<element name="Swordmaster" type="Archetype Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_ARCHETYPE_FEATURE_RONIN_SWORDMASTER">
+		<description>
+			<p>Once per turn when you miss with an attack roll, you can repeat that attack against the same target.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>Once per turn when you miss with an attack roll, repeat that attack against the same target.</description>
+		</sheet>
+	</element>
+
+</elements>
