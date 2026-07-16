@@ -56,7 +56,7 @@
 		</rules>
 		<multiclass id="ID_MHP_CV2024_MULTICLASS_VAGABOND">
 			<prerequisite>Strength 13 or Dexterity 13</prerequisite>
-			<requirements>[str:13]|[dex:13]</requirements>
+			<requirements>([str:13]||[dex:13])</requirements>
 			<setters>
 				<set name="multiclass proficiencies">Martial weapons, Light and Medium armor, and Shields.</set>
 			</setters>
@@ -167,7 +167,7 @@
 		<rules>
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
-			<select type="Spell" name="Warlock Cantrip (Heretic)" supports="Warlock,0" number="2" spellcasting="Vagabond Heretic" />
+			<select type="Spell" name="Warlock Cantrip (Heretic)" supports="Warlock, 0" number="2" spellcasting="Vagabond Heretic" />
 		</rules>
 	</element>
 
@@ -389,6 +389,7 @@
 	<element name="Blinding Attack" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_BLINDING_ATTACK">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 5</prerequisite>
+		<requirements>(ID_MHP_CV2024_CLASS_VAGABOND:5)</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 5</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to attempt to blind the target. Add the Battle Dice to the attack&#x27;s damage roll. The target must succeed on a Constitution saving throw or have the Blinded condition for 1 minute. At the end of each of its turns, the target repeats the save, ending the condition on itself on a success.</p>
@@ -401,6 +402,7 @@
 	<element name="Coup de Grâce" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_COUP_DE_GRACE">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 5</prerequisite>
+		<requirements>(ID_MHP_CV2024_CLASS_VAGABOND:5)</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 5</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to attempt to execute the target. Add the Battle Dice to the attack&#x27;s damage roll. If you reduce the target to 0 Hit Points, you regain one expended Battle Die.</p>
@@ -413,6 +415,7 @@
 	<element name="Ruinous Blow" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_RUINOUS_BLOW">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 5</prerequisite>
+		<requirements>(ID_MHP_CV2024_CLASS_VAGABOND:5)</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 5</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to sunder its defenses. Add the Battle Dice to the attack&#x27;s damage roll. The target has a &#x2212;3 penalty to AC until the end of your next turn.</p>
@@ -425,6 +428,7 @@
 	<element name="Wounding Strike" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_WOUNDING_STRIKE">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 5</prerequisite>
+		<requirements>(ID_MHP_CV2024_CLASS_VAGABOND:5)</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 5</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to deal the target a bleeding wound. Add the Battle Dice to the attack&#x27;s damage roll. A creature with a bleeding wound can&#x27;t regain Hit Points and takes Necrotic damage equal to a roll of your Battle Die for each of its wounds at the start of each of its turns. This damage ignores Resistance and Immunity. A creature can take an action to staunch all of its bleeding wounds.</p>
@@ -439,6 +443,7 @@
 	<element name="Flourish" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_FLOURISH">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 11</prerequisite>
+		<requirements>(ID_MHP_CV2024_CLASS_VAGABOND:11)</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 11</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice to perform a graceful flourish. Add the Battle Dice to the attack&#x27;s damage roll. Choose two of the following effects.</p>
@@ -457,6 +462,7 @@
 	<element name="Riposte" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_RIPOSTE">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 11</prerequisite>
+		<requirements>(ID_MHP_CV2024_CLASS_VAGABOND:11)</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 11</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice as a Bonus Action to enter a defensive stance against it. Add the Battle Dice to the attack&#x27;s damage roll. Once before the start of your next turn, when the target makes an attack against you, you can take a Reaction to make one attack with a weapon against the attacker. Resolve your attack before the triggering attack. On a hit, its attack automatically misses you.</p>
@@ -469,6 +475,7 @@
 	<element name="Stunning Blow" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_STUNNING_BLOW">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 11</prerequisite>
+		<requirements>(ID_MHP_CV2024_CLASS_VAGABOND:11)</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 11</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice as a Bonus Action to attempt to stun the target. Add the Battle Dice to the attack&#x27;s damage roll. The target must succeed on a Constitution saving throw or have the Stunned condition for 1 minute. At the end of each of its turns, the target repeats the save, ending the condition on itself on a success.</p>
@@ -481,6 +488,7 @@
 	<element name="Whirlwind" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_WHIRLWIND">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 11</prerequisite>
+		<requirements>(ID_MHP_CV2024_CLASS_VAGABOND:11)</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 11</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice to make up to three extra melee or ranged attacks using a weapon. Each attack must be against a different target within the weapon&#x27;s range that you haven&#x27;t attacked this turn. On a hit with one of these extra attacks, add a Battle Die to the damage roll.</p>
