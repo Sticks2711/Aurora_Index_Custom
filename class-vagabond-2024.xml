@@ -93,7 +93,7 @@
 			<description>Initiative bonus equal to your Constitution modifier (min +1). Attacks against up to five chosen quarries deal an extra 1d8 damage.</description>
 		</sheet>
 		<rules>
-			<stat name="initiative:misc" value="constitution:modifier" bonus="secret" />
+			<stat name="initiative:misc" value="constitution:modifier" />
 		</rules>
 	</element>
 
@@ -123,11 +123,10 @@
 			<p>You are secretly a member of an organization, such as a Thieves&#x27; Guild or a secret society. You gain proficiency and Expertise with any skill of your choice. Additionally, you gain proficiency in one tool and learn one language of your choice.</p>
 		</description>
 		<sheet alt="Secret: Faction Agent">
-			<description>You are a secret member of an organization, granting a skill with Expertise, a tool proficiency, and a language.</description>
+			<description>You are a secret member of an organization, granting a skill with Expertise, a tool proficiency, and a language. (Apply Expertise to the chosen skill manually.)</description>
 		</sheet>
 		<rules>
 			<select type="Proficiency" name="Skill Proficiency (Faction Agent)" supports="Skill" />
-			<select type="Class Feature" name="Expertise (Faction Agent)" supports="ID_INTERNAL_SUPPORT_EXPERTISE" />
 			<select type="Proficiency" name="Tool Proficiency (Faction Agent)" supports="Tool" />
 			<select type="Language" name="Language (Faction Agent)" supports="Standard||Exotic" />
 		</rules>
@@ -208,27 +207,10 @@
 			<p><strong>Maneuvers.</strong> You learn three maneuvers of your choice for which you meet the prerequisites. You gain additional maneuvers as you gain levels in this class. If another Vagabond feature gives you a maneuver, that maneuver doesn&#x27;t count against your number of maneuvers known. Whenever you gain a Vagabond level, you can choose one of the maneuvers you know and replace it with another maneuver that you could learn at that level.</p>
 			<p><strong>Saving Throws.</strong> If a maneuver requires a saving throw, the DC equals 8 plus your Strength or Dexterity modifier and Proficiency Bonus.</p>
 		</description>
-		<sheet usage="{{battle dice:count}}d{{battle die}}">
-			<description>Battle Dice: {{battle dice:count}}d{{battle die}}. Regained when you roll Initiative or finish a Short or Long Rest. Maneuver save DC {{maneuver dc}}.</description>
+		<sheet>
+			<description>Battle Dice by level: 2d6 (1st), 3d6 (3rd), 3d8 (5th), 4d8 (7th), 5d8 (9th), 5d10 (11th), 6d10 (13th), 7d10 (15th), 7d12 (17th), 8d12 (19th). Regained when you roll Initiative or finish a Short or Long Rest. Maneuver save DC = 8 + your Strength or Dexterity modifier + Proficiency Bonus.</description>
 		</sheet>
 		<rules>
-			<stat name="battle die" value="6" />
-			<stat name="battle die" value="2" level="5" bonus="progression" />
-			<stat name="battle die" value="2" level="11" bonus="progression" />
-			<stat name="battle die" value="2" level="17" bonus="progression" />
-
-			<stat name="battle dice:count" value="2" />
-			<stat name="battle dice:count" value="1" level="3" bonus="progression" />
-			<stat name="battle dice:count" value="1" level="7" bonus="progression" />
-			<stat name="battle dice:count" value="1" level="9" bonus="progression" />
-			<stat name="battle dice:count" value="1" level="13" bonus="progression" />
-			<stat name="battle dice:count" value="1" level="15" bonus="progression" />
-			<stat name="battle dice:count" value="1" level="19" bonus="progression" />
-
-			<stat name="maneuver dc" value="8" />
-			<stat name="maneuver dc" value="proficiency" />
-			<stat name="maneuver dc" value="strength:modifier" alt="dexterity:modifier" />
-
 			<select type="Class Feature" name="Maneuver" supports="Vagabond Maneuver" number="3" level="1" />
 			<select type="Class Feature" name="Maneuver" supports="Vagabond Maneuver" level="2" />
 			<select type="Class Feature" name="Maneuver" supports="Vagabond Maneuver" level="3" />
@@ -407,7 +389,6 @@
 	<element name="Blinding Attack" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_BLINDING_ATTACK">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 5</prerequisite>
-		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:5</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 5</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to attempt to blind the target. Add the Battle Dice to the attack&#x27;s damage roll. The target must succeed on a Constitution saving throw or have the Blinded condition for 1 minute. At the end of each of its turns, the target repeats the save, ending the condition on itself on a success.</p>
@@ -420,7 +401,6 @@
 	<element name="Coup de Grâce" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_COUP_DE_GRACE">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 5</prerequisite>
-		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:5</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 5</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to attempt to execute the target. Add the Battle Dice to the attack&#x27;s damage roll. If you reduce the target to 0 Hit Points, you regain one expended Battle Die.</p>
@@ -433,7 +413,6 @@
 	<element name="Ruinous Blow" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_RUINOUS_BLOW">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 5</prerequisite>
-		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:5</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 5</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to sunder its defenses. Add the Battle Dice to the attack&#x27;s damage roll. The target has a &#x2212;3 penalty to AC until the end of your next turn.</p>
@@ -446,7 +425,6 @@
 	<element name="Wounding Strike" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_WOUNDING_STRIKE">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 5</prerequisite>
-		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:5</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 5</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend two Battle Dice as a Bonus Action to deal the target a bleeding wound. Add the Battle Dice to the attack&#x27;s damage roll. A creature with a bleeding wound can&#x27;t regain Hit Points and takes Necrotic damage equal to a roll of your Battle Die for each of its wounds at the start of each of its turns. This damage ignores Resistance and Immunity. A creature can take an action to staunch all of its bleeding wounds.</p>
@@ -461,7 +439,6 @@
 	<element name="Flourish" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_FLOURISH">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 11</prerequisite>
-		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:11</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 11</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice to perform a graceful flourish. Add the Battle Dice to the attack&#x27;s damage roll. Choose two of the following effects.</p>
@@ -480,7 +457,6 @@
 	<element name="Riposte" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_RIPOSTE">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 11</prerequisite>
-		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:11</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 11</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice as a Bonus Action to enter a defensive stance against it. Add the Battle Dice to the attack&#x27;s damage roll. Once before the start of your next turn, when the target makes an attack against you, you can take a Reaction to make one attack with a weapon against the attacker. Resolve your attack before the triggering attack. On a hit, its attack automatically misses you.</p>
@@ -493,7 +469,6 @@
 	<element name="Stunning Blow" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_STUNNING_BLOW">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 11</prerequisite>
-		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:11</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 11</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice as a Bonus Action to attempt to stun the target. Add the Battle Dice to the attack&#x27;s damage roll. The target must succeed on a Constitution saving throw or have the Stunned condition for 1 minute. At the end of each of its turns, the target repeats the save, ending the condition on itself on a success.</p>
@@ -506,7 +481,6 @@
 	<element name="Whirlwind" type="Class Feature" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_MANEUVER_WHIRLWIND">
 		<supports>Vagabond Maneuver</supports>
 		<prerequisite>Vagabond Level 11</prerequisite>
-		<requirements>ID_MHP_CV2024_CLASS_VAGABOND:11</requirements>
 		<description>
 			<p><em>Prerequisite: Vagabond Level 11</em></p>
 			<p>When you hit a creature with an attack using a weapon or Unarmed Strike, you can expend three Battle Dice to make up to three extra melee or ranged attacks using a weapon. Each attack must be against a different target within the weapon&#x27;s range that you haven&#x27;t attacked this turn. On a hit with one of these extra attacks, add a Battle Die to the damage roll.</p>
@@ -524,13 +498,9 @@
 			<p>You can use the mastery properties of more kinds of weapons at higher levels: 3 kinds at level 4, and 4 kinds at level 10.</p>
 		</description>
 		<sheet>
-			<description>Use the Mastery property of {{vagabond weapon mastery}} kinds of weapons; change one on a Long Rest.</description>
+			<description>Use the Mastery property of 2 kinds of weapons (3 at level 4, 4 at level 10); change one on a Long Rest.</description>
 		</sheet>
 		<rules>
-			<stat name="vagabond weapon mastery" value="2" />
-			<stat name="vagabond weapon mastery" value="1" level="4" bonus="progression" />
-			<stat name="vagabond weapon mastery" value="1" level="10" bonus="progression" />
-			<!-- NOTE: map this selector to your ruleset's native Weapon Mastery support tag if different. -->
 			<select type="Class Feature" name="Weapon Mastery (Vagabond)" supports="Weapon Mastery" number="2" level="1" />
 			<select type="Class Feature" name="Weapon Mastery (Vagabond)" supports="Weapon Mastery" level="4" />
 			<select type="Class Feature" name="Weapon Mastery (Vagabond)" supports="Weapon Mastery" level="10" />
@@ -669,10 +639,10 @@
 			<p>You gain an Epic Boon feat or another feat of your choice for which you qualify.</p>
 		</description>
 		<sheet display="false">
-			<description>Gain an Epic Boon feat.</description>
+			<description>Gain an Epic Boon feat or another feat you qualify for.</description>
 		</sheet>
 		<rules>
-			<select type="Class Feature" name="Epic Boon (Vagabond)" supports="Epic Boon" level="19" />
+			<select type="Class Feature" name="Improvement Option (Vagabond, 19)" supports="Improvement Option,Vagabond,19" level="19" />
 		</rules>
 	</element>
 
@@ -711,11 +681,10 @@
 			<p>Your violent reputation precedes you and gives you the following benefits. Choose the Deception or Intimidation skill. You gain proficiency and Expertise in the chosen skill.</p>
 		</description>
 		<sheet>
-			<description>Gain proficiency and Expertise in Deception or Intimidation.</description>
+			<description>Gain proficiency and Expertise in Deception or Intimidation. (Choose the skill below; apply its Expertise manually.)</description>
 		</sheet>
 		<rules>
-			<select type="Proficiency" name="Skill Proficiency (Infamy)" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INTIMIDATION" />
-			<select type="Class Feature" name="Expertise (Infamy)" supports="ID_INTERNAL_SUPPORT_EXPERTISE" />
+			<select type="Proficiency" name="Skill Proficiency (Infamy)" supports="Skill" />
 		</rules>
 	</element>
 
