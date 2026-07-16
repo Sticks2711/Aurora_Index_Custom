@@ -25,15 +25,15 @@
 			<set name="hd">d10</set>
 		</setters>
 		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
-			<select type="Proficiency" name="Skill Proficiency (Vagabond)" supports="Skill,Vagabond" number="2" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" />
+			<select type="Proficiency" name="Skill Proficiency (Vagabond)" supports="Skill,Vagabond" number="2" />
 
 			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_SECRET" level="1" />
 			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_BATTLE_TACTICS" level="1" />
@@ -54,19 +54,6 @@
 			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_EPIC_BOON" level="19" />
 			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_MARTIAL_RECOVERY" level="20" />
 		</rules>
-		<multiclass id="ID_MHP_CV2024_MULTICLASS_VAGABOND">
-			<prerequisite>Strength 13 or Dexterity 13</prerequisite>
-			<requirements>([str:13]||[dex:13])</requirements>
-			<setters>
-				<set name="multiclass proficiencies">Martial weapons, Light and Medium armor, and Shields.</set>
-			</setters>
-			<rules>
-				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
-				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" />
-				<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
-			</rules>
-		</multiclass>
 	</element>
 
 	<!-- ===================== SECRET ===================== -->
