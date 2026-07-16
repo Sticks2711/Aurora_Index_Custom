@@ -9,6 +9,41 @@
 		</update>
 	</info>
 
+	<!-- Tag the Vagabond skill list onto core skill elements so supports="Skill,Vagabond"
+	     resolves, mirroring how the Ranger uses supports="Skill,Ranger".
+	     Both ID spellings are appended for multi-word skills; an append to a
+	     nonexistent ID is inert, so only the correct one takes effect. -->
+	<append id="ID_PROFICIENCY_SKILL_ACROBATICS">
+		<supports>Vagabond</supports>
+	</append>
+	<append id="ID_PROFICIENCY_SKILL_ANIMALHANDLING">
+		<supports>Vagabond</supports>
+	</append>
+	<append id="ID_PROFICIENCY_SKILL_ANIMAL_HANDLING">
+		<supports>Vagabond</supports>
+	</append>
+	<append id="ID_PROFICIENCY_SKILL_ATHLETICS">
+		<supports>Vagabond</supports>
+	</append>
+	<append id="ID_PROFICIENCY_SKILL_DECEPTION">
+		<supports>Vagabond</supports>
+	</append>
+	<append id="ID_PROFICIENCY_SKILL_INSIGHT">
+		<supports>Vagabond</supports>
+	</append>
+	<append id="ID_PROFICIENCY_SKILL_INTIMIDATION">
+		<supports>Vagabond</supports>
+	</append>
+	<append id="ID_PROFICIENCY_SKILL_PERCEPTION">
+		<supports>Vagabond</supports>
+	</append>
+	<append id="ID_PROFICIENCY_SKILL_STEALTH">
+		<supports>Vagabond</supports>
+	</append>
+	<append id="ID_PROFICIENCY_SKILL_SURVIVAL">
+		<supports>Vagabond</supports>
+	</append>
+
 	<element name="Vagabond" type="Class" source="Complete Vagabond (2024)" id="ID_MHP_CV2024_CLASS_VAGABOND">
 		<description>
 			<p>A Vagabond&#x27;s only home is the open road. Their endless journey would leave others dead on the roadside, but they endure through a desperate will to survive and a mastery of fierce combat maneuvers.</p>
@@ -25,15 +60,15 @@
 			<set name="hd">d10</set>
 		</setters>
 		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" />
-			<select type="Proficiency" name="Skill Proficiency (Vagabond)" supports="Skill,Vagabond" number="2" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
+			<select type="Proficiency" name="Skill Proficiency (Vagabond)" supports="Skill,Vagabond" number="2" requirements="!ID_MHP_CV2024_MULTICLASS_VAGABOND" />
 
 			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_SECRET" level="1" />
 			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_BATTLE_TACTICS" level="1" />
@@ -54,6 +89,19 @@
 			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_EPIC_BOON" level="19" />
 			<grant type="Class Feature" id="ID_MHP_CV2024_CLASS_FEATURE_MARTIAL_RECOVERY" level="20" />
 		</rules>
+		<multiclass id="ID_MHP_CV2024_MULTICLASS_VAGABOND">
+			<prerequisite>Strength 13 or Dexterity 13</prerequisite>
+			<requirements>([str:13]||[dex:13])</requirements>
+			<setters>
+				<set name="multiclass proficiencies">Martial weapons, Light and Medium armor, and Shields.</set>
+			</setters>
+			<rules>
+				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" />
+				<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			</rules>
+		</multiclass>
 	</element>
 
 	<!-- ===================== SECRET ===================== -->
@@ -671,7 +719,7 @@
 			<description>Gain proficiency and Expertise in Deception or Intimidation. (Choose the skill below; apply its Expertise manually.)</description>
 		</sheet>
 		<rules>
-			<select type="Proficiency" name="Skill Proficiency (Infamy)" supports="Skill" />
+			<select type="Proficiency" name="Skill Proficiency (Infamy)" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INTIMIDATION" />
 		</rules>
 	</element>
 
